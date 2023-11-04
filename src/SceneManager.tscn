@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct8ymsl57s3a6"]
+
+[ext_resource type="Script" path="res://SceneManager.gd" id="1_33epq"]
+
+[node name="SceneManager" type="Node"]
+script = ExtResource("1_33epq")
+Scenes = {
+"Chompers": &"res://Chompers.tscn",
+"HelloWorld": &"res://HelloWorld.tscn",
+"Home": &"res://Main.tscn"
+}

@@ -1,0 +1,12 @@
+RigidBody2D
+CollisionShape2D
+AnimationPlayer
+Sprite2D
+CanvasGroup
+AnimationTree
+Button
+Panel
+Area2D
+Container
+Node
+Label

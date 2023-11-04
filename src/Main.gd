@@ -1,0 +1,16 @@
+extends Node
+
+@export var Ball: PackedScene
+
+#func _input(event):
+#	if event.is_action_pressed("click"):
+#		var new_ball = Ball.instantiate()
+#		new_ball.position = get_viewport().get_mouse_position()
+#		add_child(new_ball)
+
+func _on_go_to_scene_1_pressed():
+	SceneManager.SwitchScene("HelloWorld")
+	
+func _on_go_to_scene_2_pressed():
+	SceneManager.SwitchScene("Chompers")
+

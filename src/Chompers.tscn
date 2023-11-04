@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://watu4dfaugua"]
+
+[ext_resource type="PackedScene" uid="uid://duu07u5cans21" path="res://ControlPanel.tscn" id="1_cphbl"]
+[ext_resource type="PackedScene" uid="uid://f061epmdy5ix" path="res://WallFrame.tscn" id="2_8kehj"]
+
+[node name="SceneChompers" type="Node2D"]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+z_index = 1
+position = Vector2(0, 2)
+
+[node name="ControlPanel" parent="CanvasGroup" instance=ExtResource("1_cphbl")]
+offset_left = 977.0
+offset_top = 61.0
+offset_right = 977.0
+offset_bottom = 61.0
+
+[node name="CanvasGroup2" type="CanvasGroup" parent="."]
+
+[node name="WallContainer" parent="CanvasGroup2" instance=ExtResource("2_8kehj")]

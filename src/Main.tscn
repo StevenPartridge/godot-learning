@@ -1,0 +1,206 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc04jgq832nvc"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dm5jrnxmxnuof" path="res://Ball.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://f061epmdy5ix" path="res://WallFrame.tscn" id="3_vdwaa"]
+[ext_resource type="PackedScene" uid="uid://duu07u5cans21" path="res://ControlPanel.tscn" id="4_0mc6i"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1")
+Ball = ExtResource("2")
+
+[node name="ButtonContainer" type="Node" parent="."]
+
+[node name="GoToScene1" type="Button" parent="ButtonContainer"]
+offset_left = 189.0
+offset_top = 167.0
+offset_right = 489.0
+offset_bottom = 269.0
+mouse_default_cursor_shape = 2
+text = "Hello World!"
+
+[node name="GoToScene2" type="Button" parent="ButtonContainer"]
+offset_left = 647.0
+offset_top = 163.0
+offset_right = 947.0
+offset_bottom = 265.0
+mouse_default_cursor_shape = 2
+text = "CHOMP!!!"
+
+[node name="WallContainer" parent="." instance=ExtResource("3_vdwaa")]
+
+[node name="BallContainer" type="Node" parent="."]
+
+[node name="Ball" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(324, 302)
+
+[node name="Ball2" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(912, 344)
+
+[node name="Ball3" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(222, 140)
+
+[node name="Ball4" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(266, 213)
+
+[node name="Ball5" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(607, 237)
+
+[node name="Ball6" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(846, 176)
+
+[node name="Ball7" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(681, 279)
+
+[node name="Ball8" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(394, 367)
+
+[node name="Ball9" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(360, 140)
+
+[node name="Ball10" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(653, 129)
+
+[node name="Ball11" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(488, 174)
+
+[node name="Ball12" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(585, 323)
+
+[node name="Ball13" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(459, 266)
+
+[node name="Ball14" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(498, 392)
+
+[node name="Ball15" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(771, 369)
+
+[node name="Ball47" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(394, 367)
+
+[node name="Ball48" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(360, 140)
+
+[node name="Ball49" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(653, 129)
+
+[node name="Ball50" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(488, 174)
+
+[node name="Ball51" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(585, 323)
+
+[node name="Ball52" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(459, 266)
+
+[node name="Ball53" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(498, 392)
+
+[node name="Ball54" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(771, 369)
+
+[node name="Ball16" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(753, 206)
+
+[node name="Ball17" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(959, 190)
+
+[node name="Ball18" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(837, 279)
+
+[node name="Ball19" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(866, 458)
+
+[node name="Ball28" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(251, 360)
+
+[node name="Ball29" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(839, 402)
+
+[node name="Ball30" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(149, 198)
+
+[node name="Ball31" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(193, 271)
+
+[node name="Ball32" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(534, 295)
+
+[node name="Ball33" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(773, 234)
+
+[node name="Ball34" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(608, 337)
+
+[node name="Ball35" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(321, 425)
+
+[node name="Ball36" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(287, 198)
+
+[node name="Ball37" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(580, 187)
+
+[node name="Ball38" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(442, 242)
+
+[node name="Ball39" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(512, 381)
+
+[node name="Ball40" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(386, 324)
+
+[node name="Ball41" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(425, 450)
+
+[node name="Ball42" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(698, 427)
+
+[node name="Ball43" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(680, 264)
+
+[node name="Ball44" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(886, 248)
+
+[node name="Ball45" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(764, 337)
+
+[node name="Ball46" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(793, 516)
+
+[node name="Ball20" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(662, 417)
+
+[node name="Ball21" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(200, 294)
+
+[node name="Ball22" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(187, 417)
+
+[node name="Ball23" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(295, 441)
+
+[node name="Ball24" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(431, 485)
+
+[node name="Ball25" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(581, 475)
+rotation = -0.261799
+
+[node name="Ball26" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(751, 487)
+rotation = -0.261799
+
+[node name="Ball27" parent="BallContainer" instance=ExtResource("2")]
+position = Vector2(965, 436)
+rotation = -0.261799
+
+[node name="ControlPanel" parent="." instance=ExtResource("4_0mc6i")]
+offset_left = 976.0
+offset_top = 64.0
+offset_right = 976.0
+offset_bottom = 64.0
+
+[connection signal="pressed" from="ButtonContainer/GoToScene1" to="." method="_on_go_to_scene_1_pressed"]
+[connection signal="pressed" from="ButtonContainer/GoToScene2" to="." method="_on_go_to_scene_2_pressed"]

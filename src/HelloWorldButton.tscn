@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceakqtcr20472"]
+
+[ext_resource type="Texture2D" uid="uid://c7atyslp02rc1" path="res://assets/HelloWorldTextBackground.png" id="1_hbi3g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suc2j"]
+
+[node name="Area2D" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(11.831, 4.65938)
+shape = SubResource("RectangleShape2D_suc2j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.549109, 0.549109)
+texture = ExtResource("1_hbi3g")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = -36.0
+offset_right = 8.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.91669, 3.25754)
+text = "Hello World!"
