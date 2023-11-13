@@ -1,22 +1,24 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698888518
+::res://::1699851726
 Ball.gd::GDScript::-1::1698639433::0::1::::<>RigidBody2D<>::
-Ball.tscn::PackedScene::8064037037699315273::1698888514::0::1::::<><>::uid://dv6rx85s1gy3i::::res://assets/ballBlue_10.png<>res://Ball.gd
-Chompers.tscn::PackedScene::1545345426816911424::1698888514::0::1::::<><>::uid://duu07u5cans21::::res://ControlPanel.tscn<>uid://f061epmdy5ix::::res://WallFrame.tscn
+Ball.tscn::PackedScene::8064037037699315273::1699851704::0::1::::<><>::uid://dv6rx85s1gy3i::::res://assets/ballBlue_10.png<>res://Ball.gd
+Chompers.tscn::PackedScene::1545345426816911424::1699851704::0::1::::<><>::uid://duu07u5cans21::::res://ControlPanel.tscn<>uid://f061epmdy5ix::::res://WallFrame.tscn<>uid://cco35kvlqahq2::::res://Crawler.tscn
 ControlPanel.gd::GDScript::-1::1698888163::0::1::::<>Node<>::
-ControlPanel.tscn::PackedScene::8605902646047803552::1698888514::0::1::::<><>::res://ControlPanel.gd<>uid://domelrutqf7ys::::res://assets/ControlPanelBackground.png<>uid://db83c4w1b2mnb::::res://assets/HomeButton.png<>uid://bggnan81uqbq8::::res://assets/ResetButton.png<>uid://hijftoukq54w::::res://assets/ExitButton.png
-EnemyChomper.tscn::PackedScene::9108789380284117896::1698888514::0::1::::<><>::
-HelloWorld.tscn::PackedScene::8356432424998664112::1698888514::0::1::::<><>::uid://ceakqtcr20472::::res://HelloWorldButton.tscn<>uid://duu07u5cans21::::res://ControlPanel.tscn<>uid://f061epmdy5ix::::res://WallFrame.tscn<>res://HelloWorldButton.gd
+ControlPanel.tscn::PackedScene::8605902646047803552::1699851704::0::1::::<><>::res://ControlPanel.gd<>uid://domelrutqf7ys::::res://assets/ControlPanelBackground.png<>uid://db83c4w1b2mnb::::res://assets/HomeButton.png<>uid://bggnan81uqbq8::::res://assets/ResetButton.png<>uid://hijftoukq54w::::res://assets/ExitButton.png
+EnemyChomper.tscn::PackedScene::9108789380284117896::1699851704::0::1::::<><>::
+HelloWorld.tscn::PackedScene::8356432424998664112::1699851704::0::1::::<><>::uid://ceakqtcr20472::::res://HelloWorldButton.tscn<>uid://duu07u5cans21::::res://ControlPanel.tscn<>uid://f061epmdy5ix::::res://WallFrame.tscn<>res://HelloWorldButton.gd
 HelloWorldButton.gd::GDScript::-1::1698639348::0::1::::<>RigidBody2D<>::
 HelloWorldButton.tscn::PackedScene::5054233486411236711::1698638886::0::1::::<><>::uid://c7atyslp02rc1
 icon.svg::CompressedTexture2D::7951457360396824501::1698099464::1698628305::1::::<><>::
-Main.gd::GDScript::-1::1698887938::0::1::::<>Node<>::
-Main.tscn::PackedScene::2580185021150866616::1698888514::0::1::::<><>::res://Main.gd<>uid://dm5jrnxmxnuof::::res://Ball.tscn<>uid://f061epmdy5ix::::res://WallFrame.tscn<>uid://duu07u5cans21::::res://ControlPanel.tscn
+Main.gd::GDScript::-1::1699846751::0::1::::<>Node<>::
+Main.tscn::PackedScene::2580185021150866616::1699851704::0::1::::<><>::res://Main.gd<>uid://dm5jrnxmxnuof::::res://Ball.tscn<>uid://f061epmdy5ix::::res://WallFrame.tscn<>uid://duu07u5cans21::::res://ControlPanel.tscn
 README.md::TextFile::-1::1698099464::0::1::::<><>::
+Crawler.tscn::PackedScene::4943874551029285495::1699851726::0::1::::<><>::res://Crawler.gd<>uid://cp2gg54dr0a8h::::res://assets/animations/Crawler.png
+Crawler.gd::GDScript::-1::1699851702::0::1::::<>CharacterBody2D<>::
 SceneManager.gd::GDScript::-1::1698636269::0::1::::NSceneManager<>Node<>::
-SceneManager.tscn::PackedScene::6176033463565760415::1698888514::0::1::::<><>::res://SceneManager.gd
-WallFrame.tscn::PackedScene::404482553274623183::1698632499::0::1::::<><>::uid://bvbfkpdv1s02t
-WallSection.tscn::PackedScene::3862773014223013533::1698632231::0::1::::<><>::uid://dkq1swbmmxmbq
+SceneManager.tscn::PackedScene::6176033463565760415::1699851704::0::1::::<><>::res://SceneManager.gd
+WallFrame.tscn::PackedScene::404482553274623183::1699851704::0::1::::<><>::uid://bvbfkpdv1s02t::::res://WallSection.tscn
+WallSection.tscn::PackedScene::3862773014223013533::1699851704::0::1::::<><>::uid://dkq1swbmmxmbq::::res://assets/Bouncy Platform Long.png
 ::res://assets/::1698888627
 ballBlue_10.png::CompressedTexture2D::8698298520458212912::1698099464::1698628305::1::::<><>::
 Bouncy Platform Long.png::CompressedTexture2D::7895792475247486234::1698099464::1698628305::1::::<><>::
@@ -26,6 +28,9 @@ ExitButton.png::CompressedTexture2D::508393329896778504::1698635220::1698635256:
 HelloWorldTextBackground.png::CompressedTexture2D::7020081808848690602::1698631671::1698631679::1::::<><>::
 HomeButton.png::CompressedTexture2D::7299280566333163155::1698635181::1698635256::1::::<><>::
 ResetButton.png::CompressedTexture2D::2820730067942393989::1698635199::1698635256::1::::<><>::
-::res://assets/animations/::1698889780
-::res://assets/animations/chomper/::1698889790
+::res://assets/animations/::1699852871
+Crawler.png::CompressedTexture2D::5881788858696170081::1699846700::1699846738::1::::<><>::
+ZoidbergStill (1).png::CompressedTexture2D::6864807027566208041::1699852426::1699852881::1::::<><>::
+ZoidbergWalking.png::CompressedTexture2D::3128862363953607036::1699852842::1699852881::1::::<><>::
+::res://assets/animations/chomper/::1698889793
 spritesheet.png::CompressedTexture2D::7950525569707575730::1698889029::1698889793::1::::<><>::

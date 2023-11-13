@@ -1,6 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d21movn28vy3y"]
-
-[ext_resource type="Texture2D" uid="uid://dljj82xwv08aw" path="res://assets/animations/chomper/spritesheet.png" id="1_y5krh"]
+[gd_scene load_steps=3 format=3 uid="uid://d21movn28vy3y"]
 
 [sub_resource type="Animation" id="Animation_ocpmk"]
 resource_name = "Default"
@@ -24,12 +22,12 @@ _data = {
 "Default": SubResource("Animation_ocpmk")
 }
 
-[node name="EnemyChomper" type="Sprite2D"]
+[node name="EnemyChomper" type="CharacterBody2D"]
 texture_filter = 1
-texture = ExtResource("1_y5krh")
-hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_4ud80")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
