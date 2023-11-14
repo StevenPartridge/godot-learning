@@ -26,5 +26,5 @@ position = Vector2(813, 468)
 scale = Vector2(4.6, 4.6)
 
 [node name="Crawler" parent="." instance=ExtResource("3_macxa")]
-position = Vector2(259, 504)
+position = Vector2(257, 505)
 scale = Vector2(4.6, 4.6)

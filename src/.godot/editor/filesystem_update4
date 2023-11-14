@@ -10,3 +10,4 @@ res://EnemyChomper.tscn
 res://Crawler.tscn
 res://WallFrame.tscn
 res://WallSection.tscn
+res://Crawler.gd

@@ -200,8 +200,8 @@ script = ExtResource("1_w8ta2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_hmf42")
-animation = &"ground_pound"
-frame_progress = 0.707527
+animation = &"still"
+frame_progress = 0.882561
 speed_scale = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
