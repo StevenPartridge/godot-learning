@@ -17,6 +17,12 @@ const ROTATION_MULTIPLIER = 1.5
 const rotation_speed = 360 * ROTATION_MULTIPLIER # degrees per second
 var total_rotation = 0 # total rotation needed
 
+const GROUND_POUND_COOLDOWN = 1
+var last_used_ground_pound = -GROUND_POUND_COOLDOWN
+
+enum Direction { LEFT, RIGHT }
+var current_direction = Direction.LEFT
+
 @onready var animated_sprite = $AnimatedSprite2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -40,29 +46,34 @@ func update_velocity(delta):
 		
 	# Ground Pound Input
 	if Input.is_action_just_pressed("GroundPound") and state == State.NORMAL and not is_on_floor():
-		print("STARTING GROUND POUNT innit")
-		start_ground_pound()
+		if can_use_ground_pound():
+			start_ground_pound()
 		
 	# Handle Ground Pound Logic
-	if state == State.GROUND_POUND:
+	if state == State.GROUND_POUND and can_use_ground_pound():
 		# Halt forward momentum after a short delay (if needed)
-		velocity.x = 0
+		if current_direction == Direction.RIGHT:
+			velocity.x = 100
+		else:
+			velocity.x = -100
 		velocity.y = GROUND_POUND_SPEED
 		
 	if is_rotating:
-		print("IS ROTATING")
 		perform_rotation(delta)
 
 	# Handle Horizontal Movement
 	if state != State.GROUND_POUND:
 		var direction = 0
 		if Input.is_action_pressed("MoveLeft"):
+			current_direction = Direction.LEFT
 			direction -= 1
 		if Input.is_action_pressed("MoveRight"):
+			current_direction = Direction.RIGHT
 			direction += 1
 
 		if direction != 0:
-			animated_sprite.play("walking")
+			if !is_rotating:
+				animated_sprite.play("walking")
 			velocity.x = direction * SPEED
 		elif state != State.BOUNCE:
 			animated_sprite.play("still")
@@ -79,6 +90,7 @@ func update_animation_fps():
 	animated_sprite.speed_scale = fps
 	
 func start_ground_pound():
+	last_used_ground_pound = Time.get_ticks_msec() / 1000.0
 	state = State.GROUND_POUND
 	animated_sprite.play("ground_pound")
 	# Set initial downward velocity if needed
@@ -99,15 +111,27 @@ func on_ground_pound_collision():
 		velocity.y = -BOUNCE_HEIGHT
 		# Start rotation
 		is_rotating = true
-		total_rotation = 180
+		if current_direction == Direction.RIGHT:
+			total_rotation = 180
+		else:
+			total_rotation = -180
 
 func perform_rotation(delta):
 	var rotation_step = rotation_speed * delta
-	if total_rotation > 0:
-		print(animated_sprite.animation)
-		animated_sprite.rotation_degrees += rotation_step
-		total_rotation -= rotation_step
-		if animated_sprite.rotation_degrees > 180:
-			animated_sprite.rotation_degrees = 180
+	if abs(total_rotation) > 0:
+		if total_rotation > 0:
+			animated_sprite.rotation_degrees += rotation_step
+			total_rotation -= rotation_step
+			if animated_sprite.rotation_degrees > 180:
+				animated_sprite.rotation_degrees = 180
+		else:
+			animated_sprite.rotation_degrees -= rotation_step
+			total_rotation += rotation_step
+			if animated_sprite.rotation_degrees < -180:
+				animated_sprite.rotation_degrees = -180
 	else:
 		finish_bounce()
+
+func can_use_ground_pound() -> bool:
+	var current_time = Time.get_ticks_msec() / 1000.0 # Get current time in seconds
+	return current_time - last_used_ground_pound >= GROUND_POUND_COOLDOWN
