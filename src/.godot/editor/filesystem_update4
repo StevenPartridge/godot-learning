@@ -1,6 +1,5 @@
-res://Main.gd
-res://Crawler.tscn
-res://Crawler.gd
+res://Zoidberg.tscn
+res://Zoidberg.gd
 res://Main.tscn
 res://Ball.tscn
 res://HelloWorld.tscn
@@ -8,7 +7,6 @@ res://SceneManager.tscn
 res://ControlPanel.tscn
 res://Chompers.tscn
 res://EnemyChomper.tscn
+res://Crawler.tscn
 res://WallFrame.tscn
 res://WallSection.tscn
-res://Zoidberg.tscn
-res://Zoidberg.gd

@@ -30,7 +30,7 @@ func move_crawler(delta):
 	current_time += delta
 
 	if is_moving:
-		crawl_forward(delta)
+		crawl_forward()
 		if current_time >= moving_time:
 			current_time = 0
 			is_moving = false
@@ -39,7 +39,7 @@ func move_crawler(delta):
 			current_time = 0
 			is_moving = true
 				
-func crawl_forward(delta):
+func crawl_forward():
 	velocity.x = direction * speed # Set horizontal velocity
 	move_and_slide()
 
@@ -60,7 +60,6 @@ func is_colliding():
 			var colliderName = collision.get_collider().get_name()
 			if colliderName.find("WallSection") != -1: # Check if the collision is with a StaticBody2D (like your walls)
 				return true
-				break # Exit the loop after handling the collision
 	return false
 
 func update_animation():
