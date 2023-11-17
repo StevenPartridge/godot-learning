@@ -73,7 +73,7 @@ func is_press_right():
 	return Input.is_action_just_pressed("MoveRight") or Input.is_action_pressed("MoveRight") and is_on_floor()
 
 func handle_input():
-	if current_state == State.LAND and get_input_direction() == 0: return
+	if current_state == State.LAND and get_input_direction() == 0 and !is_crouching(): return
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	if !is_on_floor():
