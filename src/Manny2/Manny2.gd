@@ -64,15 +64,22 @@ func get_input_direction() -> int:
 func is_crouching():
 	return Input.is_action_pressed("Crouch") and is_on_floor() and get_input_direction() == 0
 
+func is_press_left():
+	return Input.is_action_just_pressed("MoveLeft") or Input.is_action_pressed("MoveLeft") and is_on_floor()
+	
+func is_press_right():
+	return Input.is_action_just_pressed("MoveRight") or Input.is_action_pressed("MoveRight") and is_on_floor()
+
 func handle_input():
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		current_state = State.JUMP
 		velocity.y = JUMP_VELOCITY
-	if Input.is_action_just_pressed("MoveLeft") and is_on_floor():
+	if !is_on_floor():
+		current_state = State.JUMP
+	if is_press_left() and is_on_floor():
 		current_direction = Direction.LEFT
 		current_state = State.WALK
 		Manny.flip_h = true
-	if Input.is_action_just_pressed("MoveRight") and is_on_floor():
+	if is_press_right() and is_on_floor():
 		current_direction = Direction.RIGHT
 		current_state = State.WALK
 		Manny.flip_h = false
