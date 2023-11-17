@@ -16,7 +16,7 @@ const DECELERATION = 0.1
 enum Direction { LEFT, RIGHT }
 var current_direction = Direction.RIGHT
 
-var current_state = State.IDLE
+var current_state = State.JUMP
 var previous_state = State.IDLE
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -24,10 +24,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var Manny = $AnimatedSprite2D
 
+func _ready():
+	Manny.play("SmallJump")
+
 func _physics_process(delta):
-	handle_input()
-	update_state()
 	play_animation_based_on_state()
+	handle_input()
 	update_velocity(delta)
 	move_and_slide()
 	
@@ -71,29 +73,38 @@ func is_press_right():
 	return Input.is_action_just_pressed("MoveRight") or Input.is_action_pressed("MoveRight") and is_on_floor()
 
 func handle_input():
+	if current_state == State.LAND and get_input_direction() == 0: return
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	if !is_on_floor():
-		current_state = State.JUMP
+		update_state(State.JUMP)
 	if is_press_left() and is_on_floor():
 		current_direction = Direction.LEFT
-		current_state = State.WALK
+		update_state(State.WALK)
 		Manny.flip_h = true
 	if is_press_right() and is_on_floor():
 		current_direction = Direction.RIGHT
-		current_state = State.WALK
+		update_state(State.WALK)
 		Manny.flip_h = false
 	if is_crouching():
-		current_state = State.CROUCH
+		update_state(State.CROUCH)
 	elif is_on_floor() and get_input_direction() == 0:
-		current_state = State.IDLE
+		update_state(State.IDLE)
 
-func update_state():
+func update_state(state: State):
 	# Update the state based on conditions, like landing
 	if is_on_floor() and previous_state == State.JUMP:
+		previous_state = current_state
 		current_state = State.LAND
+		return
+		
+	previous_state = current_state
+	current_state = state
 
 func play_animation_based_on_state():
+	if current_state == State.LAND and Manny.animation == "LandOnGround" and get_input_direction() == 0:
+		return
+
 	match current_state:
 		State.IDLE:
 			play_animation("Idle")
@@ -110,11 +121,12 @@ func play_animation_based_on_state():
 		# Add cases for other states
 
 func play_animation(anim_name):
+	if anim_name == "LandOnGround":
+		Manny.play(anim_name)
 	if Manny.animation != anim_name:
 		Manny.play(anim_name)
 
 func _set_state_idle():
 	if is_on_floor():
-		current_state = State.IDLE
+		update_state(State.IDLE)
 
-# Add more functions and logic for other states and transitions
