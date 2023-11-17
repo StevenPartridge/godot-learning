@@ -5,13 +5,15 @@ enum State {
 	WALK,
 	JUMP,
 	LAND,
-	CROUCH
+	CROUCH,
+	RUN
 	# Add other states like ATTACK, CLIMB, etc.
 }
 
 const SPEED = 300.0
+const SPEED_SPRINT = 500.0
 const JUMP_VELOCITY = -600.0
-const DECELERATION = 0.1
+const DECELERATION = 0.08
 
 enum Direction { LEFT, RIGHT }
 var current_direction = Direction.RIGHT
@@ -44,7 +46,12 @@ func handle_horizontal_movement():
 			
 func update_horizontal_velocity(direction: int):
 	if direction != 0:
-		velocity.x = direction * SPEED
+		if !is_on_floor():
+			velocity.x = velocity.x
+		elif is_sprinting():
+			velocity.x = direction * SPEED_SPRINT
+		else:
+			velocity.x = direction * SPEED
 	else:
 		velocity.x = lerp(velocity.x, 0.0, DECELERATION)
 			
@@ -72,6 +79,9 @@ func is_press_left():
 func is_press_right():
 	return Input.is_action_just_pressed("MoveRight") or Input.is_action_pressed("MoveRight") and is_on_floor()
 
+func is_sprinting():
+	return Input.is_action_pressed("Sprint")
+
 func handle_input():
 	if current_state == State.LAND and get_input_direction() == 0 and !is_crouching(): return
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
@@ -80,11 +90,17 @@ func handle_input():
 		update_state(State.JUMP)
 	if is_press_left() and is_on_floor():
 		current_direction = Direction.LEFT
-		update_state(State.WALK)
+		if is_sprinting():
+			update_state(State.RUN)
+		else:
+			update_state(State.WALK)
 		Manny.flip_h = true
 	if is_press_right() and is_on_floor():
 		current_direction = Direction.RIGHT
-		update_state(State.WALK)
+		if is_sprinting():
+			update_state(State.RUN)
+		else:
+			update_state(State.WALK)
 		Manny.flip_h = false
 	if is_crouching():
 		update_state(State.CROUCH)
@@ -110,6 +126,8 @@ func play_animation_based_on_state():
 			play_animation("Idle")
 		State.WALK:
 			play_animation("Walk")
+		State.RUN:
+			play_animation("Run")
 		State.JUMP:
 			play_animation("SmallJump")
 		State.LAND:
