@@ -151,7 +151,7 @@ script = ExtResource("1_gvy1c")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_4gkw0")
 animation = &"walk_left"
-frame_progress = 0.66099
+frame_progress = 0.69169
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

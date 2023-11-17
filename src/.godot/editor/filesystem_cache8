@@ -1,26 +1,33 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1699929508
+::res://::1700191154
 Ball.gd::GDScript::-1::1698639433::0::1::::<>RigidBody2D<>::
-Ball.tscn::PackedScene::8064037037699315273::1699855053::0::1::::<><>::uid://dv6rx85s1gy3i::::res://assets/ballBlue_10.png<>res://Ball.gd
-Chompers.tscn::PackedScene::1545345426816911424::1699855053::0::1::::<><>::uid://duu07u5cans21::::res://ControlPanel.tscn<>uid://f061epmdy5ix::::res://WallFrame.tscn<>uid://taxej333tepe::::res://Zoidberg.tscn<>uid://cco35kvlqahq2::::res://Crawler.tscn
+Ball.tscn::PackedScene::8064037037699315273::1699937131::0::1::::<><>::uid://dv6rx85s1gy3i
+Chompers.tscn::PackedScene::1545345426816911424::1700162886::0::1::::<><>::uid://f061epmdy5ix::::res://WallFrame.tscn<>uid://taxej333tepe::::res://Zoidberg.tscn<>uid://cco35kvlqahq2::::res://Crawler.tscn<>uid://dj56s4cynwp6c::::res://Zoidberg2.tscn
 ControlPanel.gd::GDScript::-1::1698888163::0::1::::<>Node<>::
-ControlPanel.tscn::PackedScene::8605902646047803552::1699855053::0::1::::<><>::res://ControlPanel.gd<>uid://domelrutqf7ys::::res://assets/ControlPanelBackground.png<>uid://db83c4w1b2mnb::::res://assets/HomeButton.png<>uid://bggnan81uqbq8::::res://assets/ResetButton.png<>uid://hijftoukq54w::::res://assets/ExitButton.png
-Crawler.gd::GDScript::-1::1699854656::0::1::::<>CharacterBody2D<>::
-Crawler.tscn::PackedScene::4943874551029285495::1699855053::0::1::::<><>::res://Crawler.gd<>uid://cp2gg54dr0a8h::::res://assets/animations/Crawler.png
-EnemyChomper.tscn::PackedScene::9108789380284117896::1699855053::0::1::::<><>::
-HelloWorld.tscn::PackedScene::8356432424998664112::1699855053::0::1::::<><>::uid://ceakqtcr20472::::res://HelloWorldButton.tscn<>uid://duu07u5cans21::::res://ControlPanel.tscn<>uid://f061epmdy5ix::::res://WallFrame.tscn<>res://HelloWorldButton.gd
+ControlPanel.tscn::PackedScene::8605902646047803552::1699937131::0::1::::<><>::res://ControlPanel.gd<>uid://domelrutqf7ys
+Crawler2.gd::GDScript::-1::1700026768::0::1::::<>CharacterBody2D<>::
+Crawler2.tscn::PackedScene::2435963225312302077::1700026893::0::1::::<><>::res://Crawler2.gd<>uid://cp2gg54dr0a8h
+Crawler.gd::GDScript::-1::1699940107::0::1::::<>CharacterBody2D<>::
+Crawler.tscn::PackedScene::4943874551029285495::1700007782::0::1::::<><>::res://Crawler.gd<>uid://cp2gg54dr0a8h
+EnemyChomper.tscn::PackedScene::9108789380284117896::1699938094::0::1::::<><>::
+HelloWorld.tscn::PackedScene::8356432424998664112::1699937131::0::1::::<><>::uid://ceakqtcr20472
 HelloWorldButton.gd::GDScript::-1::1698639348::0::1::::<>RigidBody2D<>::
 HelloWorldButton.tscn::PackedScene::5054233486411236711::1698638886::0::1::::<><>::uid://c7atyslp02rc1
 icon.svg::CompressedTexture2D::7951457360396824501::1698099464::1698628305::1::::<><>::
-Main.gd::GDScript::-1::1699846751::0::1::::<>Node<>::
-Main.tscn::PackedScene::2580185021150866616::1699855053::0::1::::<><>::res://Main.gd<>uid://dm5jrnxmxnuof::::res://Ball.tscn<>uid://f061epmdy5ix::::res://WallFrame.tscn<>uid://duu07u5cans21::::res://ControlPanel.tscn
+Main.gd::GDScript::-1::1700033133::0::1::::<>Node<>::
+Main.tscn::PackedScene::2580185021150866616::1700162885::0::1::::<><>::res://Main.gd<>uid://dm5jrnxmxnuof::::res://Ball.tscn<>uid://f061epmdy5ix::::res://WallFrame.tscn
+Manny.gd::GDScript::-1::1700093842::0::1::::<>CharacterBody2D<>::
+Manny.tscn::PackedScene::9157414194901768894::1700162885::0::1::::<><>::res://Manny.gd<>uid://cxl5wv8a0ctpw::::res://assets/animations/Manny/Sprite Sheets/Character Idle 48x48.png<>uid://bel3vbc0dugve::::res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png<>uid://bofhwds88qr4t::::res://assets/animations/Manny/Sprite Sheets/run cycle 48x48.png<>uid://efyehmqh3wyv::::res://assets/animations/Manny/Sprite Sheets/player land 48x48.png<>uid://eqplqxe3txet::::res://assets/animations/Manny/Sprite Sheets/wall land 48x48.png<>uid://bykhyv6gwdd3g::::res://assets/animations/Manny/Sprite Sheets/player jump 48x48.png<>uid://d1a0k62p851rk::::res://assets/animations/Manny/PlayerWalk/PlayerWalk 48x48.png
+MannysWorld.tscn::PackedScene::5978601152796422963::1700162886::0::1::::<><>::uid://f061epmdy5ix::::res://WallFrame.tscn<>uid://d3p6jkuneeemw::::res://Manny.tscn
 README.md::TextFile::-1::1698099464::0::1::::<><>::
-SceneManager.gd::GDScript::-1::1698636269::0::1::::NSceneManager<>Node<>::
-SceneManager.tscn::PackedScene::6176033463565760415::1699855053::0::1::::<><>::res://SceneManager.gd
-WallFrame.tscn::PackedScene::404482553274623183::1699855053::0::1::::<><>::uid://bvbfkpdv1s02t::::res://WallSection.tscn
-WallSection.tscn::PackedScene::3862773014223013533::1699855053::0::1::::<><>::uid://dkq1swbmmxmbq::::res://assets/Bouncy Platform Long.png
-Zoidberg.gd::GDScript::-1::1699854925::0::1::::<>CharacterBody2D<>::
-Zoidberg.tscn::PackedScene::1334992180406899690::1699855249::0::1::::<><>::res://Zoidberg.gd<>uid://c42mmskwhc7on::::res://assets/animations/ZoidbergStill (1).png<>uid://cjbjo3lnpj4yj::::res://assets/animations/ZoidbergAttack.png<>uid://bktv52lq3c8ku::::res://assets/animations/ZoidbergWalking.png
+SceneManager.gd::GDScript::-1::1700032989::0::1::::NSceneManager<>Node<>::
+SceneManager.tscn::PackedScene::6176033463565760415::1700162885::0::1::::<><>::res://SceneManager.gd
+WallFrame.tscn::PackedScene::404482553274623183::1700094026::0::1::::<><>::uid://bvbfkpdv1s02t
+WallSection.tscn::PackedScene::3862773014223013533::1699938221::0::1::::<><>::uid://dkq1swbmmxmbq
+Zoidberg2.gd::GDScript::-1::1700027143::0::1::::<>CharacterBody2D<>::
+Zoidberg2.tscn::PackedScene::7854808874884905052::1700162885::0::1::::<><>::res://Zoidberg2.gd<>uid://cjbjo3lnpj4yj::::res://assets/animations/ZoidbergAttack.png<>uid://c42mmskwhc7on::::res://assets/animations/ZoidbergStill (1).png<>uid://bktv52lq3c8ku::::res://assets/animations/ZoidbergWalking.png
+Zoidberg.gd::GDScript::-1::1700027213::0::1::::<>CharacterBody2D<>::
+Zoidberg.tscn::PackedScene::1334992180406899690::1700027215::0::1::::<><>::res://Zoidberg.gd<>uid://c42mmskwhc7on
 ::res://assets/::1698888627
 ballBlue_10.png::CompressedTexture2D::8698298520458212912::1698099464::1698628305::1::::<><>::
 Bouncy Platform Long.png::CompressedTexture2D::7895792475247486234::1698099464::1698628305::1::::<><>::
@@ -30,10 +37,75 @@ ExitButton.png::CompressedTexture2D::508393329896778504::1698635220::1698635256:
 HelloWorldTextBackground.png::CompressedTexture2D::7020081808848690602::1698631671::1698631679::1::::<><>::
 HomeButton.png::CompressedTexture2D::7299280566333163155::1698635181::1698635256::1::::<><>::
 ResetButton.png::CompressedTexture2D::2820730067942393989::1698635199::1698635256::1::::<><>::
-::res://assets/animations/::1699854760
+::res://assets/animations/::1700028312
 Crawler.png::CompressedTexture2D::5881788858696170081::1699846700::1699846738::1::::<><>::
 ZoidbergAttack.png::CompressedTexture2D::5407178280189866309::1699854747::1699854760::1::::<><>::
 ZoidbergStill (1).png::CompressedTexture2D::6864807027566208041::1699852426::1699852881::1::::<><>::
 ZoidbergWalking.png::CompressedTexture2D::3128862363953607036::1699852842::1699852881::1::::<><>::
 ::res://assets/animations/chomper/::1698889793
 spritesheet.png::CompressedTexture2D::7950525569707575730::1698889029::1698889793::1::::<><>::
+::res://assets/animations/Manny/::1700028694
+::res://assets/animations/Manny/Air Spin/::1700028695
+player air spin 48x48.png::CompressedTexture2D::6446558859553579610::1687490586::1700028695::1::::<><>::
+::res://assets/animations/Manny/Aseprite Files/::1687490570
+::res://assets/animations/Manny/Aseprite Files/Player/::1687490570
+::res://assets/animations/Manny/Aseprite Files/Tilemap/::1687490570
+::res://assets/animations/Manny/Basic Sword Attack 1/::1700028695
+player sword atk 64x64.png::CompressedTexture2D::2406281014596326852::1686627002::1700028695::1::::<><>::
+::res://assets/animations/Manny/Climb-Back/::1700028695
+player climb-back 48x48.png::CompressedTexture2D::1654619664711477378::1695395992::1700028695::1::::<><>::
+::res://assets/animations/Manny/Climb-Side/::1700028695
+Player Side-Climb 48x48.png::CompressedTexture2D::7737922028651089893::1695395992::1700028695::1::::<><>::
+::res://assets/animations/Manny/Crouch-Idle/::1700028695
+Player Crouch-Idle 48x48.png::CompressedTexture2D::2691621847762999254::1687490586::1700028695::1::::<><>::
+::res://assets/animations/Manny/Crouch-Walk/::1700028695
+player crouch-walk 48x48.png::CompressedTexture2D::8165665746602567003::1687490586::1700028695::1::::<><>::
+::res://assets/animations/Manny/Katana Attack-Sheathe/::1700028695
+player katana attack-sheathe 80x64.png::CompressedTexture2D::1552322453685397084::1695396734::1700028695::1::::<><>::
+::res://assets/animations/Manny/Katana Continuous Attack/::1700028695
+player katana continuous attack 80x64.png::CompressedTexture2D::5421339269559206948::1695417814::1700028695::1::::<><>::
+::res://assets/animations/Manny/Katana Run/::1700028695
+player katana run 48x48.png::CompressedTexture2D::5200744905024395180::1695395992::1700028695::1::::<><>::
+::res://assets/animations/Manny/Ledge Grab-Climb/::1700028695
+player ledge climb 48x48.png::CompressedTexture2D::3754115835119984476::1687490586::1700028695::1::::<><>::
+::res://assets/animations/Manny/Player Death/::1700028695
+Player Death 64x64.png::CompressedTexture2D::3745389361503608420::1686627002::1700028695::1::::<><>::
+::res://assets/animations/Manny/Player Hurt-Damaged/::1700028695
+Player Hurt 48x48.png::CompressedTexture2D::1582977907118728439::1686627002::1700028695::1::::<><>::
+::res://assets/animations/Manny/Player Punch/::1700028695
+Player Punch 64x64.png::CompressedTexture2D::6080026082427373491::1686627002::1700028695::1::::<><>::
+::res://assets/animations/Manny/Player Roll/::1700028695
+Player Roll 48x48.png::CompressedTexture2D::8455166323365298833::1687490586::1700028695::1::::<><>::
+::res://assets/animations/Manny/Player Sword Idle/::1700028695
+Player Sword Idle 48x48.png::CompressedTexture2D::8885809244171163276::1686627002::1700028695::1::::<><>::
+::res://assets/animations/Manny/Player Sword Run/::1700028695
+Player Sword Run 48x48.png::CompressedTexture2D::5091206562309806836::1686627002::1700028695::1::::<><>::
+::res://assets/animations/Manny/PlayerIdlePushPull/::1700028695
+player push idle 48x48.png::CompressedTexture2D::4147959681448110164::1686627002::1700028695::1::::<><>::
+::res://assets/animations/Manny/PlayerWalk/::1700028695
+PlayerWalk 48x48.png::CompressedTexture2D::8985709439086769620::1686627002::1700028695::1::::<><>::
+::res://assets/animations/Manny/Pull/::1700028695
+Player Pull 48x48.png::CompressedTexture2D::8168710382952227270::1687490586::1700028695::1::::<><>::
+::res://assets/animations/Manny/Punch Cross/::1700028695
+Player Punch Cross 64x64.png::CompressedTexture2D::3609852586501995456::1695395992::1700028695::1::::<><>::
+::res://assets/animations/Manny/Punch Jab/::1700028695
+Player Jab 48x48.png::CompressedTexture2D::3038937645850366538::1695395992::1700028695::1::::<><>::
+::res://assets/animations/Manny/Push/::1700028695
+player push 48x48.png::CompressedTexture2D::2634275026858653669::1687490586::1700028695::1::::<><>::
+::res://assets/animations/Manny/Running Shooting-Running Aiming/::1700028695
+Player Running Aiming 48x48.png::CompressedTexture2D::1776728293406909486::1695395992::1700028695::1::::<><>::
+Player Running Shooting 48x48.png::CompressedTexture2D::1876177466262097499::1695395992::1700028695::1::::<><>::
+::res://assets/animations/Manny/Shoot 2H/::1700028695
+player shoot 2H 48x48.png::CompressedTexture2D::4009808028324871872::1695395992::1700028695::1::::<><>::
+::res://assets/animations/Manny/Sprite Sheets/::1700028695
+Character Idle 48x48.png::CompressedTexture2D::6411754877606914368::1687490570::1700028695::1::::<><>::
+player jump 48x48.png::CompressedTexture2D::4092065737730982978::1687490570::1700028695::1::::<><>::
+player land 48x48.png::CompressedTexture2D::292542001262995053::1687490570::1700028695::1::::<><>::
+run cycle 48x48.png::CompressedTexture2D::3379850876731773793::1687490570::1700028695::1::::<><>::
+wall land 48x48.png::CompressedTexture2D::314716693365573263::1687490570::1700028695::1::::<><>::
+Wall Slide 48x48.png::CompressedTexture2D::3840823141079611194::1687490570::1700028695::1::::<><>::
+::res://assets/animations/Manny/Sword Stab/::1700028695
+Player Sword Stab 96x48.png::CompressedTexture2D::8483997701122738230::1686627002::1700028695::1::::<><>::
+::res://assets/animations/Manny/Tilemap/::1700028695
+160x160 background tilemap.png::CompressedTexture2D::5838795334084514604::1687490572::1700028695::1::::<><>::
+Basic Tilemap.png::CompressedTexture2D::8889978580099928009::1687490572::1700028695::1::::<><>::

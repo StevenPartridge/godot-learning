@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc04jgq832nvc"]
+[gd_scene load_steps=4 format=3 uid="uid://bc04jgq832nvc"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dm5jrnxmxnuof" path="res://Ball.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://f061epmdy5ix" path="res://WallFrame.tscn" id="3_vdwaa"]
-[ext_resource type="PackedScene" uid="uid://duu07u5cans21" path="res://ControlPanel.tscn" id="4_0mc6i"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1")
@@ -11,19 +10,27 @@ Ball = ExtResource("2")
 
 [node name="ButtonContainer" type="Node" parent="."]
 
-[node name="GoToScene1" type="Button" parent="ButtonContainer"]
-offset_left = 189.0
-offset_top = 167.0
-offset_right = 489.0
-offset_bottom = 269.0
+[node name="GoToHelloWorld" type="Button" parent="ButtonContainer"]
+offset_left = 43.0
+offset_top = 44.0
+offset_right = 343.0
+offset_bottom = 146.0
 mouse_default_cursor_shape = 2
 text = "Hello World!"
 
-[node name="GoToScene2" type="Button" parent="ButtonContainer"]
-offset_left = 647.0
-offset_top = 163.0
-offset_right = 947.0
-offset_bottom = 265.0
+[node name="GoToManysWorld" type="Button" parent="ButtonContainer"]
+offset_left = 363.0
+offset_top = 44.0
+offset_right = 663.0
+offset_bottom = 146.0
+mouse_default_cursor_shape = 2
+text = "Hello World!"
+
+[node name="GoToChomp" type="Button" parent="ButtonContainer"]
+offset_left = 674.0
+offset_top = 48.0
+offset_right = 974.0
+offset_bottom = 150.0
 mouse_default_cursor_shape = 2
 text = "CHOMP!!!"
 
@@ -196,11 +203,6 @@ rotation = -0.261799
 position = Vector2(965, 436)
 rotation = -0.261799
 
-[node name="ControlPanel" parent="." instance=ExtResource("4_0mc6i")]
-offset_left = 976.0
-offset_top = 64.0
-offset_right = 976.0
-offset_bottom = 64.0
-
-[connection signal="pressed" from="ButtonContainer/GoToScene1" to="." method="_on_go_to_scene_1_pressed"]
-[connection signal="pressed" from="ButtonContainer/GoToScene2" to="." method="_on_go_to_scene_2_pressed"]
+[connection signal="pressed" from="ButtonContainer/GoToHelloWorld" to="." method="_on_go_to_scene_1_pressed"]
+[connection signal="pressed" from="ButtonContainer/GoToManysWorld" to="." method="_on_go_to_manys_world_pressed"]
+[connection signal="pressed" from="ButtonContainer/GoToChomp" to="." method="_on_go_to_scene_2_pressed"]

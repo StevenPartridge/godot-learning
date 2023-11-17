@@ -1,44 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://f061epmdy5ix"]
+[gd_scene load_steps=4 format=3 uid="uid://f061epmdy5ix"]
 
 [ext_resource type="PackedScene" uid="uid://bvbfkpdv1s02t" path="res://WallSection.tscn" id="1_71pe4"]
+[ext_resource type="PackedScene" uid="uid://duu07u5cans21" path="res://ControlPanel.tscn" id="2_se22j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvmcq"]
+size = Vector2(1198, 52)
 
 [node name="WallContainer" type="Node"]
 
-[node name="WallSection1" parent="." instance=ExtResource("1_71pe4")]
-
-[node name="WallSection2" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(692, 576)
-
-[node name="WallSection3" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(440, 578)
-
-[node name="WallSection4" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(193, 580)
-
 [node name="WallSection7" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(935, 59)
+position = Vector2(1004, -11)
 
 [node name="WallSection8" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(692, 57)
+position = Vector2(712, -4)
 
 [node name="WallSection9" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(440, 59)
+position = Vector2(421, -4)
 
 [node name="WallSection10" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(193, 61)
+position = Vector2(128, -5)
 
 [node name="WallSection5" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(65, 443)
+position = Vector2(-17, 489)
 rotation = -1.5708
 
 [node name="WallSection6" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(62, 185)
+position = Vector2(-17, 176)
 rotation = -1.5708
 
 [node name="WallSection11" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(1058, 446)
+position = Vector2(1168, 463)
 rotation = -1.5708
 
 [node name="WallSection12" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(1055, 188)
+position = Vector2(1169, 161)
 rotation = -1.5708
+
+[node name="ControlPanel" parent="." instance=ExtResource("2_se22j")]
+offset_left = 1058.0
+offset_top = 29.0
+offset_right = 1058.0
+offset_bottom = 29.0
+scale = Vector2(0.44, 0.44)
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(581, 644)
+shape = SubResource("RectangleShape2D_kvmcq")

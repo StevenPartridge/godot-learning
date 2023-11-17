@@ -14,3 +14,7 @@ func _on_go_to_scene_1_pressed():
 func _on_go_to_scene_2_pressed():
 	SceneManager.SwitchScene("Chompers")
 
+
+
+func _on_go_to_manys_world_pressed():
+	SceneManager.SwitchScene("MannysWorld")

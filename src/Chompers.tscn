@@ -1,25 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://watu4dfaugua"]
 
-[ext_resource type="PackedScene" uid="uid://duu07u5cans21" path="res://ControlPanel.tscn" id="1_cphbl"]
 [ext_resource type="PackedScene" uid="uid://f061epmdy5ix" path="res://WallFrame.tscn" id="2_8kehj"]
 [ext_resource type="PackedScene" uid="uid://taxej333tepe" path="res://Zoidberg.tscn" id="3_m1blt"]
 [ext_resource type="PackedScene" uid="uid://cco35kvlqahq2" path="res://Crawler.tscn" id="3_macxa"]
+[ext_resource type="PackedScene" uid="uid://dj56s4cynwp6c" path="res://Zoidberg2.tscn" id="5_1bm1k"]
 
 [node name="SceneChompers" type="Node2D"]
 
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
-z_index = 1
-position = Vector2(0, 2)
-
-[node name="ControlPanel" parent="CanvasGroup" instance=ExtResource("1_cphbl")]
-offset_left = 977.0
-offset_top = 61.0
-offset_right = 977.0
-offset_bottom = 61.0
-
-[node name="CanvasGroup2" type="CanvasGroup" parent="."]
-
-[node name="WallContainer" parent="CanvasGroup2" instance=ExtResource("2_8kehj")]
+[node name="WallContainer" parent="." instance=ExtResource("2_8kehj")]
 
 [node name="Zoidberg" parent="." instance=ExtResource("3_m1blt")]
 position = Vector2(813, 468)
@@ -28,3 +16,7 @@ scale = Vector2(4.6, 4.6)
 [node name="Crawler" parent="." instance=ExtResource("3_macxa")]
 position = Vector2(257, 505)
 scale = Vector2(4.6, 4.6)
+
+[node name="Zoidberg2" parent="." instance=ExtResource("5_1bm1k")]
+position = Vector2(525, 467)
+scale = Vector2(4.64, 4.64)

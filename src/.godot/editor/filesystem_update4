@@ -1,13 +1,6 @@
-res://Zoidberg.tscn
-res://Zoidberg.gd
+res://Manny.tscn
+res://Zoidberg2.tscn
 res://Main.tscn
-res://Ball.tscn
-res://HelloWorld.tscn
 res://SceneManager.tscn
-res://ControlPanel.tscn
+res://MannysWorld.tscn
 res://Chompers.tscn
-res://EnemyChomper.tscn
-res://Crawler.tscn
-res://WallFrame.tscn
-res://WallSection.tscn
-res://Crawler.gd
