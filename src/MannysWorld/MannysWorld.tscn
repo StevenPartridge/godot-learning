@@ -9,3 +9,4 @@
 
 [node name="Manny1" parent="." instance=ExtResource("2_3v8xs")]
 position = Vector2(565, 367)
+scale = Vector2(4.68, 4.68)
