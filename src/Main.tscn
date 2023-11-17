@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bc04jgq832nvc"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1"]
-[ext_resource type="PackedScene" uid="uid://dm5jrnxmxnuof" path="res://Ball.tscn" id="2"]
-[ext_resource type="PackedScene" uid="uid://f061epmdy5ix" path="res://WallFrame.tscn" id="3_vdwaa"]
+[ext_resource type="PackedScene" uid="uid://dm5jrnxmxnuof" path="res://Extras/Ball.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://f061epmdy5ix" path="res://Extras/WallFrame.tscn" id="3_vdwaa"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1")
@@ -24,7 +24,7 @@ offset_top = 44.0
 offset_right = 663.0
 offset_bottom = 146.0
 mouse_default_cursor_shape = 2
-text = "Hello World!"
+text = "Manny!"
 
 [node name="GoToChomp" type="Button" parent="ButtonContainer"]
 offset_left = 674.0
@@ -33,6 +33,14 @@ offset_right = 974.0
 offset_bottom = 150.0
 mouse_default_cursor_shape = 2
 text = "CHOMP!!!"
+
+[node name="GoToManny2" type="Button" parent="ButtonContainer"]
+offset_left = 365.0
+offset_top = 159.0
+offset_right = 665.0
+offset_bottom = 261.0
+mouse_default_cursor_shape = 2
+text = "? Manny ?"
 
 [node name="WallContainer" parent="." instance=ExtResource("3_vdwaa")]
 
@@ -206,3 +214,4 @@ rotation = -0.261799
 [connection signal="pressed" from="ButtonContainer/GoToHelloWorld" to="." method="_on_go_to_scene_1_pressed"]
 [connection signal="pressed" from="ButtonContainer/GoToManysWorld" to="." method="_on_go_to_manys_world_pressed"]
 [connection signal="pressed" from="ButtonContainer/GoToChomp" to="." method="_on_go_to_scene_2_pressed"]
+[connection signal="pressed" from="ButtonContainer/GoToManny2" to="." method="_on_go_to_manny_2_pressed"]

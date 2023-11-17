@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://crgcxm0twy8dj"]
+
+[ext_resource type="PackedScene" uid="uid://f061epmdy5ix" path="res://Extras/WallFrame.tscn" id="1_6br70"]
+[ext_resource type="PackedScene" uid="uid://d3p6jkuneeemw" path="res://MannysWorld/Manny.tscn" id="2_b3pxv"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="WallContainer" parent="." instance=ExtResource("1_6br70")]
+
+[node name="Manny" parent="." instance=ExtResource("2_b3pxv")]
+position = Vector2(537, 531)
+scale = Vector2(4.68, 4.68)

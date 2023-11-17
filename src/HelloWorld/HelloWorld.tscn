@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://drb6hrwcjc04s"]
+
+[ext_resource type="PackedScene" uid="uid://ceakqtcr20472" path="res://HelloWorld/HelloWorldButton.tscn" id="1_rdxom"]
+[ext_resource type="PackedScene" uid="uid://duu07u5cans21" path="res://Extras/ControlPanel.tscn" id="1_vnq5i"]
+[ext_resource type="PackedScene" uid="uid://f061epmdy5ix" path="res://Extras/WallFrame.tscn" id="2_yu3np"]
+[ext_resource type="Script" path="res://HelloWorld/HelloWorldButton.gd" id="3_1l1ac"]
+
+[node name="SceneHelloWorld" type="Node"]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+z_index = 1
+
+[node name="ControlPanel" parent="CanvasGroup" instance=ExtResource("1_vnq5i")]
+offset_left = 981.0
+offset_top = 61.0
+offset_right = 981.0
+offset_bottom = 61.0
+
+[node name="CanvasGroup2" type="CanvasGroup" parent="."]
+position = Vector2(848, 161)
+
+[node name="Buttons" type="Node" parent="CanvasGroup2"]
+
+[node name="Button1" parent="CanvasGroup2/Buttons" instance=ExtResource("1_rdxom")]
+position = Vector2(346, 207)
+script = ExtResource("3_1l1ac")
+
+[node name="WallContainer" parent="CanvasGroup2" instance=ExtResource("2_yu3np")]

@@ -1,42 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1700191154
-Ball.gd::GDScript::-1::1698639433::0::1::::<>RigidBody2D<>::
-Ball.tscn::PackedScene::8064037037699315273::1699937131::0::1::::<><>::uid://dv6rx85s1gy3i
-Chompers.tscn::PackedScene::1545345426816911424::1700162886::0::1::::<><>::uid://f061epmdy5ix::::res://WallFrame.tscn<>uid://taxej333tepe::::res://Zoidberg.tscn<>uid://cco35kvlqahq2::::res://Crawler.tscn<>uid://dj56s4cynwp6c::::res://Zoidberg2.tscn
-ControlPanel.gd::GDScript::-1::1698888163::0::1::::<>Node<>::
-ControlPanel.tscn::PackedScene::8605902646047803552::1699937131::0::1::::<><>::res://ControlPanel.gd<>uid://domelrutqf7ys
-Crawler2.gd::GDScript::-1::1700026768::0::1::::<>CharacterBody2D<>::
-Crawler2.tscn::PackedScene::2435963225312302077::1700026893::0::1::::<><>::res://Crawler2.gd<>uid://cp2gg54dr0a8h
-Crawler.gd::GDScript::-1::1699940107::0::1::::<>CharacterBody2D<>::
-Crawler.tscn::PackedScene::4943874551029285495::1700007782::0::1::::<><>::res://Crawler.gd<>uid://cp2gg54dr0a8h
-EnemyChomper.tscn::PackedScene::9108789380284117896::1699938094::0::1::::<><>::
-HelloWorld.tscn::PackedScene::8356432424998664112::1699937131::0::1::::<><>::uid://ceakqtcr20472
-HelloWorldButton.gd::GDScript::-1::1698639348::0::1::::<>RigidBody2D<>::
-HelloWorldButton.tscn::PackedScene::5054233486411236711::1698638886::0::1::::<><>::uid://c7atyslp02rc1
+::res://::1700194920
 icon.svg::CompressedTexture2D::7951457360396824501::1698099464::1698628305::1::::<><>::
 Main.gd::GDScript::-1::1700033133::0::1::::<>Node<>::
-Main.tscn::PackedScene::2580185021150866616::1700162885::0::1::::<><>::res://Main.gd<>uid://dm5jrnxmxnuof::::res://Ball.tscn<>uid://f061epmdy5ix::::res://WallFrame.tscn
-Manny.gd::GDScript::-1::1700093842::0::1::::<>CharacterBody2D<>::
-Manny.tscn::PackedScene::9157414194901768894::1700162885::0::1::::<><>::res://Manny.gd<>uid://cxl5wv8a0ctpw::::res://assets/animations/Manny/Sprite Sheets/Character Idle 48x48.png<>uid://bel3vbc0dugve::::res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png<>uid://bofhwds88qr4t::::res://assets/animations/Manny/Sprite Sheets/run cycle 48x48.png<>uid://efyehmqh3wyv::::res://assets/animations/Manny/Sprite Sheets/player land 48x48.png<>uid://eqplqxe3txet::::res://assets/animations/Manny/Sprite Sheets/wall land 48x48.png<>uid://bykhyv6gwdd3g::::res://assets/animations/Manny/Sprite Sheets/player jump 48x48.png<>uid://d1a0k62p851rk::::res://assets/animations/Manny/PlayerWalk/PlayerWalk 48x48.png
-MannysWorld.tscn::PackedScene::5978601152796422963::1700162886::0::1::::<><>::uid://f061epmdy5ix::::res://WallFrame.tscn<>uid://d3p6jkuneeemw::::res://Manny.tscn
+Main.tscn::PackedScene::2580185021150866616::1700194265::0::1::::<><>::res://Main.gd<>uid://dm5jrnxmxnuof
 README.md::TextFile::-1::1698099464::0::1::::<><>::
-SceneManager.gd::GDScript::-1::1700032989::0::1::::NSceneManager<>Node<>::
-SceneManager.tscn::PackedScene::6176033463565760415::1700162885::0::1::::<><>::res://SceneManager.gd
-WallFrame.tscn::PackedScene::404482553274623183::1700094026::0::1::::<><>::uid://bvbfkpdv1s02t
-WallSection.tscn::PackedScene::3862773014223013533::1699938221::0::1::::<><>::uid://dkq1swbmmxmbq
-Zoidberg2.gd::GDScript::-1::1700027143::0::1::::<>CharacterBody2D<>::
-Zoidberg2.tscn::PackedScene::7854808874884905052::1700162885::0::1::::<><>::res://Zoidberg2.gd<>uid://cjbjo3lnpj4yj::::res://assets/animations/ZoidbergAttack.png<>uid://c42mmskwhc7on::::res://assets/animations/ZoidbergStill (1).png<>uid://bktv52lq3c8ku::::res://assets/animations/ZoidbergWalking.png
-Zoidberg.gd::GDScript::-1::1700027213::0::1::::<>CharacterBody2D<>::
-Zoidberg.tscn::PackedScene::1334992180406899690::1700027215::0::1::::<><>::res://Zoidberg.gd<>uid://c42mmskwhc7on
-::res://assets/::1698888627
-ballBlue_10.png::CompressedTexture2D::8698298520458212912::1698099464::1698628305::1::::<><>::
-Bouncy Platform Long.png::CompressedTexture2D::7895792475247486234::1698099464::1698628305::1::::<><>::
-Bouncy Platform Medium.png::CompressedTexture2D::3192301516354317244::1698099464::1698628305::1::::<><>::
-ControlPanelBackground.png::CompressedTexture2D::8166941831442423114::1698635240::1698635256::1::::<><>::
-ExitButton.png::CompressedTexture2D::508393329896778504::1698635220::1698635256::1::::<><>::
+::res://assets/::1700192731
+ballBlue_10.png::CompressedTexture2D::8698298520458212912::1698099464::1700192703::1::::<><>::
 HelloWorldTextBackground.png::CompressedTexture2D::7020081808848690602::1698631671::1698631679::1::::<><>::
-HomeButton.png::CompressedTexture2D::7299280566333163155::1698635181::1698635256::1::::<><>::
-ResetButton.png::CompressedTexture2D::2820730067942393989::1698635199::1698635256::1::::<><>::
 ::res://assets/animations/::1700028312
 Crawler.png::CompressedTexture2D::5881788858696170081::1699846700::1699846738::1::::<><>::
 ZoidbergAttack.png::CompressedTexture2D::5407178280189866309::1699854747::1699854760::1::::<><>::
@@ -109,3 +79,43 @@ Player Sword Stab 96x48.png::CompressedTexture2D::8483997701122738230::168662700
 ::res://assets/animations/Manny/Tilemap/::1700028695
 160x160 background tilemap.png::CompressedTexture2D::5838795334084514604::1687490572::1700028695::1::::<><>::
 Basic Tilemap.png::CompressedTexture2D::8889978580099928009::1687490572::1700028695::1::::<><>::
+::res://assets/ControlPanel/::1700194006
+ControlPanelBackground.png::CompressedTexture2D::8166941831442423114::1698635240::1700192676::1::::<><>::
+ExitButton.png::CompressedTexture2D::508393329896778504::1698635220::1700192676::1::::<><>::
+HomeButton.png::CompressedTexture2D::7299280566333163155::1698635181::1700192676::1::::<><>::
+ResetButton.png::CompressedTexture2D::2820730067942393989::1698635199::1700192676::1::::<><>::
+::res://assets/Frame/::1700192634
+Bouncy Platform Long.png::CompressedTexture2D::7895792475247486234::1698099464::1700192634::1::::<><>::
+Bouncy Platform Medium.png::CompressedTexture2D::3192301516354317244::1698099464::1700192634::1::::<><>::
+::res://Chompers/::1700193070
+Chompers.tscn::PackedScene::1545345426816911424::1700192916::0::1::::<><>::uid://f061epmdy5ix
+Crawler2.gd::GDScript::-1::1700026768::0::1::::<>CharacterBody2D<>::
+Crawler2.tscn::PackedScene::2435963225312302077::1700192823::0::1::::<><>::res://Chompers/Crawler2.gd<>uid://cp2gg54dr0a8h
+Crawler.gd::GDScript::-1::1699940107::0::1::::<>CharacterBody2D<>::
+Crawler.tscn::PackedScene::4943874551029285495::1700192828::0::1::::<><>::res://Chompers/Crawler.gd<>uid://cp2gg54dr0a8h
+EnemyChomper.tscn::PackedScene::9108789380284117896::1699938094::0::1::::<><>::
+Zoidberg2.gd::GDScript::-1::1700027143::0::1::::<>CharacterBody2D<>::
+Zoidberg2.tscn::PackedScene::7854808874884905052::1700193070::0::1::::<><>::res://Chompers/Zoidberg2.gd<>uid://cjbjo3lnpj4yj
+Zoidberg.gd::GDScript::-1::1700027213::0::1::::<>CharacterBody2D<>::
+Zoidberg.tscn::PackedScene::1334992180406899690::1700192882::0::1::::<><>::res://Chompers/Zoidberg.gd<>uid://c42mmskwhc7on
+::res://Extras/::1700194862
+Ball.gd::GDScript::-1::1698639433::0::1::::<>RigidBody2D<>::
+Ball.tscn::PackedScene::8064037037699315273::1700193385::0::1::::<><>::uid://dv6rx85s1gy3i
+ControlPanel.gd::GDScript::-1::1698888163::0::1::::<>Node<>::
+ControlPanel.tscn::PackedScene::8605902646047803552::1700192819::0::1::::<><>::res://Extras/ControlPanel.gd<>uid://domelrutqf7ys
+SceneManager.gd::GDScript::-1::1700194124::0::1::::NSceneManager<>Node<>::
+SceneManager.tscn::PackedScene::6176033463565760415::1700194862::0::1::::<><>::res://Extras/SceneManager.gd
+WallFrame.tscn::PackedScene::404482553274623183::1700192892::0::1::::<><>::uid://bvbfkpdv1s02t
+WallSection.tscn::PackedScene::3862773014223013533::1700192634::0::1::::<><>::uid://dkq1swbmmxmbq
+::res://HelloWorld/::1700194266
+HelloWorld.tscn::PackedScene::8356432424998664112::1700194266::0::1::::<><>::uid://ceakqtcr20472
+HelloWorldButton.gd::GDScript::-1::1698639348::0::1::::<>RigidBody2D<>::
+HelloWorldButton.tscn::PackedScene::5054233486411236711::1698638886::0::1::::<><>::uid://c7atyslp02rc1
+::res://Manny2/::1700194920
+Manny2.gd::GDScript::-1::1700194907::0::1::::<>CharacterBody2D<>::
+Manny2.tscn::PackedScene::6283167015888589508::1700194907::0::1::::<><>::res://MannysWorld/Manny.gd<>uid://bel3vbc0dugve::::res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png<>uid://cxl5wv8a0ctpw::::res://assets/animations/Manny/Sprite Sheets/Character Idle 48x48.png<>uid://efyehmqh3wyv::::res://assets/animations/Manny/Sprite Sheets/player land 48x48.png<>uid://eqplqxe3txet::::res://assets/animations/Manny/Sprite Sheets/wall land 48x48.png<>uid://bofhwds88qr4t::::res://assets/animations/Manny/Sprite Sheets/run cycle 48x48.png<>uid://bykhyv6gwdd3g::::res://assets/animations/Manny/Sprite Sheets/player jump 48x48.png<>uid://d1a0k62p851rk::::res://assets/animations/Manny/PlayerWalk/PlayerWalk 48x48.png
+MannysWorld.tscn::PackedScene::6808748478764448698::1700194907::0::1::::<><>::uid://f061epmdy5ix
+::res://MannysWorld/::1700194266
+Manny.gd::GDScript::-1::1700093842::0::1::::<>CharacterBody2D<>::
+Manny.tscn::PackedScene::9157414194901768894::1700194266::0::1::::<><>::res://MannysWorld/Manny.gd<>uid://bel3vbc0dugve
+MannysWorld.tscn::PackedScene::5978601152796422963::1700192916::0::1::::<><>::uid://f061epmdy5ix
