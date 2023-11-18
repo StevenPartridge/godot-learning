@@ -1,9 +1,6 @@
-res://Extras/SceneManager.tscn
-res://Manny2/MannysWorld2.tscn
+res://Manny3/Manny3.tscn
 res://Manny2/Manny2.gd
 res://Main.gd
 res://Main.tscn
-res://Manny2/Manny2.tscn
-res://MannysWorld/Manny.gd
-res://MannysWorld/Manny1.tscn
-res://MannysWorld/MannysWorld.tscn
+res://Extras/SceneManager.tscn
+res://Manny3/MannysWorld3.tscn

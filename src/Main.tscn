@@ -40,7 +40,15 @@ offset_top = 159.0
 offset_right = 665.0
 offset_bottom = 261.0
 mouse_default_cursor_shape = 2
-text = "? Manny ?"
+text = "Manny 2"
+
+[node name="GoToManny3" type="Button" parent="ButtonContainer"]
+offset_left = 367.0
+offset_top = 282.0
+offset_right = 667.0
+offset_bottom = 384.0
+mouse_default_cursor_shape = 2
+text = "Manny 3"
 
 [node name="WallContainer" parent="." instance=ExtResource("3_vdwaa")]
 
@@ -215,3 +223,4 @@ rotation = -0.261799
 [connection signal="pressed" from="ButtonContainer/GoToManysWorld" to="." method="_on_go_to_manys_world_pressed"]
 [connection signal="pressed" from="ButtonContainer/GoToChomp" to="." method="_on_go_to_scene_2_pressed"]
 [connection signal="pressed" from="ButtonContainer/GoToManny2" to="." method="_on_go_to_manny_2_pressed"]
+[connection signal="pressed" from="ButtonContainer/GoToManny3" to="." method="_on_go_to_manny_3_pressed"]

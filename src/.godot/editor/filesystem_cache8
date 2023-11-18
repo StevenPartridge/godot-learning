@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1700198274
+::res://::1700350995
 icon.svg::CompressedTexture2D::7951457360396824501::1698099464::1698628305::1::::<><>::
 Main.gd::GDScript::-1::1700195110::0::1::::<>Node<>::
-Main.tscn::PackedScene::2580185021150866616::1700195217::0::1::::<><>::res://Main.gd<>uid://dm5jrnxmxnuof::::res://Extras/Ball.tscn<>uid://f061epmdy5ix::::res://Extras/WallFrame.tscn
+Main.tscn::PackedScene::2580185021150866616::1700195217::0::1::::<><>::res://Main.gd<>uid://dm5jrnxmxnuof
 README.md::TextFile::-1::1698099464::0::1::::<><>::
 ::res://assets/::1700192731
 ballBlue_10.png::CompressedTexture2D::8698298520458212912::1698099464::1700192703::1::::<><>::
@@ -111,11 +111,15 @@ WallSection.tscn::PackedScene::3862773014223013533::1700192634::0::1::::<><>::ui
 HelloWorld.tscn::PackedScene::8356432424998664112::1700194266::0::1::::<><>::uid://ceakqtcr20472
 HelloWorldButton.gd::GDScript::-1::1698639348::0::1::::<>RigidBody2D<>::
 HelloWorldButton.tscn::PackedScene::5054233486411236711::1698638886::0::1::::<><>::uid://c7atyslp02rc1
-::res://Manny2/::1700198274
-Manny2.gd::GDScript::-1::1700198056::0::1::::<>CharacterBody2D<>::
-Manny2.tscn::PackedScene::6283167015888589508::1700198274::0::1::::<><>::res://MannysWorld/Manny1.gd<>uid://bel3vbc0dugve::::res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png<>uid://cxl5wv8a0ctpw::::res://assets/animations/Manny/Sprite Sheets/Character Idle 48x48.png<>uid://efyehmqh3wyv::::res://assets/animations/Manny/Sprite Sheets/player land 48x48.png<>uid://eqplqxe3txet::::res://assets/animations/Manny/Sprite Sheets/wall land 48x48.png<>uid://bofhwds88qr4t::::res://assets/animations/Manny/Sprite Sheets/run cycle 48x48.png<>uid://bykhyv6gwdd3g::::res://assets/animations/Manny/Sprite Sheets/player jump 48x48.png<>uid://d1a0k62p851rk::::res://assets/animations/Manny/PlayerWalk/PlayerWalk 48x48.png
-MannysWorld2.tscn::PackedScene::6808748478764448698::1700195774::0::1::::<><>::uid://f061epmdy5ix::::res://Extras/WallFrame.tscn<>uid://cvru3wihhmkwa::::res://Manny2/Manny2.tscn<>res://Manny2/Manny2.gd
-::res://MannysWorld/::1700198274
+::res://Manny2/::1700242540
+Manny2.gd::GDScript::-1::1700242540::0::1::::<>CharacterBody2D<>::
+Manny2.tscn::PackedScene::6283167015888589508::1700242540::0::1::::<><>::res://Manny2/Manny2.gd<>uid://bel3vbc0dugve::::res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png<>uid://cxl5wv8a0ctpw::::res://assets/animations/Manny/Sprite Sheets/Character Idle 48x48.png<>uid://efyehmqh3wyv::::res://assets/animations/Manny/Sprite Sheets/player land 48x48.png<>uid://eqplqxe3txet::::res://assets/animations/Manny/Sprite Sheets/wall land 48x48.png<>uid://bofhwds88qr4t::::res://assets/animations/Manny/Sprite Sheets/run cycle 48x48.png<>uid://bykhyv6gwdd3g::::res://assets/animations/Manny/Sprite Sheets/player jump 48x48.png<>uid://d1a0k62p851rk::::res://assets/animations/Manny/PlayerWalk/PlayerWalk 48x48.png
+MannysWorld2.tscn::PackedScene::6808748478764448698::1700195774::0::1::::<><>::uid://f061epmdy5ix
+::res://Manny3/::1700350995
+Manny3.gd::GDScript::-1::1700350973::0::1::::<>CharacterBody2D<>::
+Manny3.tscn::PackedScene::6552127674271692371::1700350973::0::1::::<><>::res://Manny2/Manny2.gd<>uid://bel3vbc0dugve::::res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png<>uid://cxl5wv8a0ctpw::::res://assets/animations/Manny/Sprite Sheets/Character Idle 48x48.png<>uid://efyehmqh3wyv::::res://assets/animations/Manny/Sprite Sheets/player land 48x48.png<>uid://eqplqxe3txet::::res://assets/animations/Manny/Sprite Sheets/wall land 48x48.png<>uid://bofhwds88qr4t::::res://assets/animations/Manny/Sprite Sheets/run cycle 48x48.png<>uid://bykhyv6gwdd3g::::res://assets/animations/Manny/Sprite Sheets/player jump 48x48.png<>uid://d1a0k62p851rk::::res://assets/animations/Manny/PlayerWalk/PlayerWalk 48x48.png
+MannysWorld2.tscn::PackedScene::5427277957995387065::1700350973::0::1::::<><>::uid://f061epmdy5ix
+::res://MannysWorld/::1700242540
 Manny1.gd::GDScript::-1::1700198114::0::1::::<>CharacterBody2D<>::
-Manny.tscn::PackedScene::9157414194901768894::1700198274::0::1::::<><>::res://MannysWorld/Manny1.gd<>uid://bel3vbc0dugve::::res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png<>uid://cxl5wv8a0ctpw::::res://assets/animations/Manny/Sprite Sheets/Character Idle 48x48.png<>uid://efyehmqh3wyv::::res://assets/animations/Manny/Sprite Sheets/player land 48x48.png<>uid://eqplqxe3txet::::res://assets/animations/Manny/Sprite Sheets/wall land 48x48.png<>uid://bofhwds88qr4t::::res://assets/animations/Manny/Sprite Sheets/run cycle 48x48.png<>uid://bykhyv6gwdd3g::::res://assets/animations/Manny/Sprite Sheets/player jump 48x48.png<>uid://d1a0k62p851rk::::res://assets/animations/Manny/PlayerWalk/PlayerWalk 48x48.png
-MannysWorld.tscn::PackedScene::5978601152796422963::1700192916::0::1::::<><>::uid://f061epmdy5ix
+Manny1.tscn::PackedScene::9157414194901768894::1700242540::0::1::::<><>::res://MannysWorld/Manny1.gd<>uid://bel3vbc0dugve::::res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png<>uid://cxl5wv8a0ctpw::::res://assets/animations/Manny/Sprite Sheets/Character Idle 48x48.png<>uid://efyehmqh3wyv::::res://assets/animations/Manny/Sprite Sheets/player land 48x48.png<>uid://eqplqxe3txet::::res://assets/animations/Manny/Sprite Sheets/wall land 48x48.png<>uid://bofhwds88qr4t::::res://assets/animations/Manny/Sprite Sheets/run cycle 48x48.png<>uid://bykhyv6gwdd3g::::res://assets/animations/Manny/Sprite Sheets/player jump 48x48.png<>uid://d1a0k62p851rk::::res://assets/animations/Manny/PlayerWalk/PlayerWalk 48x48.png
+MannysWorld.tscn::PackedScene::5978601152796422963::1700242540::0::1::::<><>::uid://f061epmdy5ix::::res://Extras/WallFrame.tscn<>uid://d3p6jkuneeemw::::res://MannysWorld/Manny1.tscn

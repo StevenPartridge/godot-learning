@@ -9,5 +9,6 @@ Scenes = {
 "HelloWorld": &"res://HelloWorld/HelloWorld.tscn",
 "Home": &"res://Main.tscn",
 "Manny2": &"res://Manny2/MannysWorld2.tscn",
+"Manny3": &"res://Manny3/MannysWorld3.tscn",
 "MannysWorld": &"res://MannysWorld/MannysWorld.tscn"
 }

@@ -22,3 +22,7 @@ func _on_go_to_manys_world_pressed():
 
 func _on_go_to_manny_2_pressed():
 	SceneManager.SwitchScene("Manny2")
+
+
+func _on_go_to_manny_3_pressed():
+	SceneManager.SwitchScene("Manny3")
