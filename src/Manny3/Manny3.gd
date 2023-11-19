@@ -6,7 +6,13 @@ enum State {
 	JUMP,
 	LAND,
 	CROUCH,
-	RUN
+	RUN,
+	PUNCHJAB,
+	PUNCHHEAVY,
+	PUNCHCROSS,
+	PUSHPULLIDLE,
+	PUSH,
+	PULL
 	# Add other states like ATTACK, CLIMB, etc.
 }
 
@@ -90,14 +96,18 @@ func handle_input():
 		update_state(State.JUMP)
 	if is_press_left() and is_on_floor():
 		current_direction = Direction.LEFT
-		if is_sprinting():
+		if abs(velocity.x) == 0:
+			update_state(State.PUSH)
+		elif is_sprinting():
 			update_state(State.RUN)
 		else:
 			update_state(State.WALK)
 		Manny.flip_h = true
 	if is_press_right() and is_on_floor():
 		current_direction = Direction.RIGHT
-		if is_sprinting():
+		if abs(velocity.x) == 0:
+			update_state(State.PUSH)
+		elif is_sprinting():
 			update_state(State.RUN)
 		else:
 			update_state(State.WALK)
@@ -120,6 +130,8 @@ func update_state(state: State):
 func play_animation_based_on_state():
 	if current_state == State.LAND and Manny.animation == "LandOnGround" and get_input_direction() == 0:
 		return
+		
+	print(current_state)
 
 	match current_state:
 		State.IDLE:
@@ -136,6 +148,18 @@ func play_animation_based_on_state():
 			call_deferred("_set_state_idle")
 		State.CROUCH:
 			play_animation("CrouchIdle")
+		State.PUSH:
+			play_animation("InteractionPush")
+		State.PULL:
+			play_animation("InteractionPull")
+		State.PUSHPULLIDLE:
+			play_animation("InteractionPushPullIdle")
+		State.PUNCHJAB:
+			play_animation("PunchJab")
+		State.PUNCHHEAVY:
+			play_animation("PunchHeavy")
+		State.PUNCHCROSS:
+			play_animation("PunchCross")
 		# Add cases for other states
 
 func play_animation(anim_name):
@@ -146,5 +170,6 @@ func play_animation(anim_name):
 
 func _set_state_idle():
 	if is_on_floor():
+		print("NOPE")
 		update_state(State.IDLE)
 
