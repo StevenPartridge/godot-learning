@@ -4,6 +4,7 @@ enum State {
 	IDLE,
 	WALK,
 	JUMP,
+	JUMPROLL,
 	LAND,
 	CROUCH,
 	RUN,
@@ -25,8 +26,18 @@ enum Weapon {
 	SWORD
 }
 
-var current_equiped = Weapon.SWORD
+enum JumpState {
+	FLOOR,
+	SINGLE,
+	DOUBLE
+}
 
+var current_jump_state = JumpState.SINGLE
+var current_equiped = Weapon.SWORD
+var current_time = 0.0
+var jump_time = current_time
+
+const DOUBLE_JUMP_DELAY = 0.2
 const SPEED = 300.0
 const SPEED_SPRINT = 500.0
 const JUMP_VELOCITY = -600.0
@@ -48,6 +59,7 @@ func _ready():
 	Manny.play("SmallJump")
 
 func _physics_process(delta):
+	current_time += delta
 	handle_input()
 	play_animation_based_on_state()
 	update_action_hold_states()
@@ -123,11 +135,19 @@ func is_current_state_locked():
 	return (current_state == State.LAND and get_input_direction() == 0 and !is_crouching()) or current_state == State.SWORDSTAB
 
 func handle_input():
+	if is_on_floor():
+		current_jump_state = JumpState.FLOOR
 	if is_current_state_locked(): return
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	if Input.is_action_just_pressed("Jump") and current_jump_state == JumpState.FLOOR:
+		jump_time = current_time
+		current_jump_state = JumpState.SINGLE
 		velocity.y = JUMP_VELOCITY
-	if !is_on_floor():
 		update_state(State.JUMP)
+		return
+	elif Input.is_action_just_pressed("Jump") and current_jump_state == JumpState.SINGLE and current_time - jump_time > DOUBLE_JUMP_DELAY:
+		current_jump_state = JumpState.DOUBLE
+		velocity.y = JUMP_VELOCITY * 0.8
+		update_state(State.JUMPROLL)
 	if is_press_left() and is_on_floor():
 		if abs(velocity.x) == 0:
 			update_state(State.PUSH)
@@ -196,9 +216,10 @@ func play_animation_based_on_state():
 					play_animation("SwordRun")
 		State.JUMP:
 			play_animation("SmallJump")
+		State.JUMPROLL:
+			play_animation("JumpRoll")
 		State.LAND:
 			play_animation("LandOnGround")
-			call_deferred("_set_state_idle")
 		State.CROUCH:
 			play_animation("CrouchIdle")
 		State.PUSH:
@@ -209,7 +230,6 @@ func play_animation_based_on_state():
 			play_animation("InteractionPushPullIdle")
 		State.SWORDSTAB:
 			play_animation("SwordStab")
-			# call_deferred("_set_state_idle")
 		State.PUNCHJAB:
 			play_animation("PunchJab")
 		State.PUNCHCROSS:
