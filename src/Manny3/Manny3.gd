@@ -23,6 +23,7 @@ const DECELERATION = 0.08
 
 enum Direction { LEFT, RIGHT }
 var current_direction = Direction.RIGHT
+var current_direction_locked = false
 
 var current_state = State.JUMP
 var previous_state = State.IDLE
@@ -38,8 +39,15 @@ func _ready():
 func _physics_process(delta):
 	play_animation_based_on_state()
 	handle_input()
+	update_action_hold_states()
 	update_velocity(delta)
 	move_and_slide()
+	
+func update_action_hold_states():
+	if Input.is_action_just_pressed("Interact"):
+			current_direction_locked = true
+	if Input.is_action_just_released("Interact"):
+			current_direction_locked = false
 	
 func update_velocity(delta):
 	apply_gravity(delta)
@@ -68,10 +76,14 @@ func apply_gravity(delta):
 func get_input_direction() -> int:
 	var direction = 0
 	if Input.is_action_pressed("MoveLeft"):
-		current_direction = Direction.LEFT
+		if !current_direction_locked:
+			current_direction = Direction.LEFT
+			Manny.flip_h = true
 		direction -= 1
 	if Input.is_action_pressed("MoveRight"):
-		current_direction = Direction.RIGHT
+		if !current_direction_locked:
+			current_direction = Direction.RIGHT
+			Manny.flip_h = false
 		direction += 1
 	return direction
 	
@@ -95,27 +107,33 @@ func handle_input():
 	if !is_on_floor():
 		update_state(State.JUMP)
 	if is_press_left() and is_on_floor():
-		current_direction = Direction.LEFT
 		if abs(velocity.x) == 0:
 			update_state(State.PUSH)
 		elif is_sprinting():
 			update_state(State.RUN)
 		else:
 			update_state(State.WALK)
-		Manny.flip_h = true
 	if is_press_right() and is_on_floor():
-		current_direction = Direction.RIGHT
 		if abs(velocity.x) == 0:
 			update_state(State.PUSH)
 		elif is_sprinting():
 			update_state(State.RUN)
 		else:
 			update_state(State.WALK)
-		Manny.flip_h = false
+	if is_holding_push_pull():
+		update_state(State.PUSHPULLIDLE)
+		if is_press_left() or is_press_right():
+			if (is_press_left() and current_direction == Direction.LEFT) or (is_press_right() and current_direction == Direction.RIGHT):
+				update_state(State.PUSH)
+			else:
+				update_state(State.PULL)
 	if is_crouching():
 		update_state(State.CROUCH)
-	elif is_on_floor() and get_input_direction() == 0:
+	elif is_on_floor() and get_input_direction() == 0 and !is_holding_push_pull():
 		update_state(State.IDLE)
+
+func is_holding_push_pull():
+	return is_on_floor() and Input.is_action_pressed("Interact")
 
 func update_state(state: State):
 	# Update the state based on conditions, like landing
@@ -130,8 +148,6 @@ func update_state(state: State):
 func play_animation_based_on_state():
 	if current_state == State.LAND and Manny.animation == "LandOnGround" and get_input_direction() == 0:
 		return
-		
-	print(current_state)
 
 	match current_state:
 		State.IDLE:
@@ -170,6 +186,5 @@ func play_animation(anim_name):
 
 func _set_state_idle():
 	if is_on_floor():
-		print("NOPE")
 		update_state(State.IDLE)
 
