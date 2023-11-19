@@ -12,9 +12,20 @@ enum State {
 	PUNCHCROSS,
 	PUSHPULLIDLE,
 	PUSH,
-	PULL
+	PULL,
+	SWORDIDLE,
+	SWORDRUN,
+	SWORDSTAB
 	# Add other states like ATTACK, CLIMB, etc.
 }
+
+enum Weapon {
+	UNARMED,
+	GUN,
+	SWORD
+}
+
+var current_equiped = Weapon.SWORD
 
 const SPEED = 300.0
 const SPEED_SPRINT = 500.0
@@ -37,8 +48,8 @@ func _ready():
 	Manny.play("SmallJump")
 
 func _physics_process(delta):
-	play_animation_based_on_state()
 	handle_input()
+	play_animation_based_on_state()
 	update_action_hold_states()
 	update_velocity(delta)
 	move_and_slide()
@@ -52,14 +63,22 @@ func update_action_hold_states():
 func update_velocity(delta):
 	apply_gravity(delta)
 	handle_horizontal_movement()
-	
+
+func is_frozen_horizontal():
+	match current_state:
+		State.SWORDSTAB:
+			return true
+		State.CROUCH:
+			return true
+	return false
+
 func handle_horizontal_movement():
 	if !Input.is_action_just_pressed("Crouch"):
 		var direction = get_input_direction()
 		update_horizontal_velocity(direction)
 			
 func update_horizontal_velocity(direction: int):
-	if direction != 0:
+	if direction != 0 or !is_frozen_horizontal():
 		if !is_on_floor():
 			velocity.x = velocity.x
 		elif is_sprinting():
@@ -99,9 +118,12 @@ func is_press_right():
 
 func is_sprinting():
 	return Input.is_action_pressed("Sprint")
+	
+func is_current_state_locked():
+	return (current_state == State.LAND and get_input_direction() == 0 and !is_crouching()) or current_state == State.SWORDSTAB
 
 func handle_input():
-	if current_state == State.LAND and get_input_direction() == 0 and !is_crouching(): return
+	if is_current_state_locked(): return
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	if !is_on_floor():
@@ -120,15 +142,17 @@ func handle_input():
 			update_state(State.RUN)
 		else:
 			update_state(State.WALK)
-	if is_holding_push_pull():
+	if is_crouching():
+		update_state(State.CROUCH)
+	elif is_holding_push_pull():
 		update_state(State.PUSHPULLIDLE)
 		if is_press_left() or is_press_right():
 			if (is_press_left() and current_direction == Direction.LEFT) or (is_press_right() and current_direction == Direction.RIGHT):
 				update_state(State.PUSH)
 			else:
 				update_state(State.PULL)
-	if is_crouching():
-		update_state(State.CROUCH)
+	elif Input.is_action_just_pressed("MainAttack"):
+		update_state(State.SWORDSTAB)
 	elif is_on_floor() and get_input_direction() == 0 and !is_holding_push_pull():
 		update_state(State.IDLE)
 
@@ -136,6 +160,7 @@ func is_holding_push_pull():
 	return is_on_floor() and Input.is_action_pressed("Interact")
 
 func update_state(state: State):
+	if is_current_state_locked(): return
 	# Update the state based on conditions, like landing
 	if is_on_floor() and previous_state == State.JUMP:
 		previous_state = current_state
@@ -148,19 +173,31 @@ func update_state(state: State):
 func play_animation_based_on_state():
 	if current_state == State.LAND and Manny.animation == "LandOnGround" and get_input_direction() == 0:
 		return
+	elif current_state == State.SWORDSTAB and Manny.animation == "SwordStab":
+		return
 
 	match current_state:
 		State.IDLE:
-			play_animation("Idle")
+			if current_equiped == Weapon.UNARMED:
+				play_animation("Idle")
+			elif current_equiped == Weapon.SWORD:
+				play_animation("SwordIdle")
 		State.WALK:
-			play_animation("Walk")
+			match current_equiped:
+				Weapon.UNARMED:
+					play_animation("Walk")
+				Weapon.SWORD:
+					play_animation("SwordRun")
 		State.RUN:
-			play_animation("Run")
+			match current_equiped:
+				Weapon.UNARMED:
+					play_animation("Run")
+				Weapon.SWORD:
+					play_animation("SwordRun")
 		State.JUMP:
 			play_animation("SmallJump")
 		State.LAND:
 			play_animation("LandOnGround")
-			# Set a deferred call to switch to idle after the landing animation
 			call_deferred("_set_state_idle")
 		State.CROUCH:
 			play_animation("CrouchIdle")
@@ -170,21 +207,24 @@ func play_animation_based_on_state():
 			play_animation("InteractionPull")
 		State.PUSHPULLIDLE:
 			play_animation("InteractionPushPullIdle")
+		State.SWORDSTAB:
+			play_animation("SwordStab")
+			# call_deferred("_set_state_idle")
 		State.PUNCHJAB:
 			play_animation("PunchJab")
-		State.PUNCHHEAVY:
-			play_animation("PunchHeavy")
 		State.PUNCHCROSS:
 			play_animation("PunchCross")
+		State.PUNCHHEAVY:
+			play_animation("PunchHeavy")
 		# Add cases for other states
 
 func play_animation(anim_name):
-	if anim_name == "LandOnGround":
-		Manny.play(anim_name)
 	if Manny.animation != anim_name:
 		Manny.play(anim_name)
 
 func _set_state_idle():
-	if is_on_floor():
-		update_state(State.IDLE)
+	if is_on_floor() and current_state == State.LAND:
+		current_state = State.IDLE
+	if current_state == State.SWORDSTAB:
+		current_state = State.IDLE
 
