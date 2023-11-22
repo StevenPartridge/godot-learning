@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://f061epmdy5ix"]
+[gd_scene load_steps=7 format=3 uid="uid://f061epmdy5ix"]
 
 [ext_resource type="PackedScene" uid="uid://bvbfkpdv1s02t" path="res://Extras/WallSection.tscn" id="1_71pe4"]
 [ext_resource type="PackedScene" uid="uid://duu07u5cans21" path="res://Extras/ControlPanel.tscn" id="2_se22j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvmcq"]
 size = Vector2(1198, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kx2h2"]
+size = Vector2(1192, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2khpp"]
+size = Vector2(46.5, 604)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb24t"]
+size = Vector2(63, 604.5)
 
 [node name="WallContainer" type="Node"]
 
@@ -33,8 +42,24 @@ position = Vector2(1168, 463)
 rotation = -1.5708
 
 [node name="WallSection12" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(1169, 161)
+position = Vector2(1170, 169)
 rotation = -1.5708
+
+[node name="WallSection13" parent="." instance=ExtResource("1_71pe4")]
+position = Vector2(127, 651)
+rotation = 3.14159
+
+[node name="WallSection14" parent="." instance=ExtResource("1_71pe4")]
+position = Vector2(411, 653)
+rotation = 3.14159
+
+[node name="WallSection15" parent="." instance=ExtResource("1_71pe4")]
+position = Vector2(697, 653)
+rotation = 3.14159
+
+[node name="WallSection16" parent="." instance=ExtResource("1_71pe4")]
+position = Vector2(984, 650)
+rotation = 3.14159
 
 [node name="ControlPanel" parent="." instance=ExtResource("2_se22j")]
 offset_left = 1058.0
@@ -44,7 +69,20 @@ offset_bottom = 29.0
 scale = Vector2(0.44, 0.44)
 
 [node name="Area2D" type="StaticBody2D" parent="."]
+position = Vector2(-9, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(581, 644)
 shape = SubResource("RectangleShape2D_kvmcq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(577, -8)
+shape = SubResource("RectangleShape2D_kx2h2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 314)
+shape = SubResource("RectangleShape2D_2khpp")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1178, 310)
+shape = SubResource("RectangleShape2D_nb24t")

@@ -1,3 +1,5 @@
-res://Manny3/Manny3.tscn
+res://Extras/WallFrame.tscn
 res://Manny2/Manny2.gd
-res://Manny3/Manny3.gd
+res://Manny4/Manny4.tscn
+res://Manny4/MannysWorld4.tscn
+res://Manny4/Manny4.gd

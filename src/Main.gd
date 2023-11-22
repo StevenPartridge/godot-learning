@@ -26,3 +26,7 @@ func _on_go_to_manny_2_pressed():
 
 func _on_go_to_manny_3_pressed():
 	SceneManager.SwitchScene("Manny3")
+
+
+func _on_go_to_manny_4_pressed():
+	SceneManager.SwitchScene("Manny4")
