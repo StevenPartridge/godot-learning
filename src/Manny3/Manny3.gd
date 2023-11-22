@@ -6,6 +6,8 @@ enum State {
 	JUMP,
 	JUMPROLL,
 	LAND,
+	WALLLAND,
+	WALLSLIDE,
 	CROUCH,
 	RUN,
 	PUNCHJAB,
@@ -45,7 +47,6 @@ const DECELERATION = 0.08
 
 enum Direction { LEFT, RIGHT }
 var current_direction = Direction.RIGHT
-var current_direction_locked = false
 
 var current_state = State.JUMP
 var previous_state = State.IDLE
@@ -62,15 +63,11 @@ func _physics_process(delta):
 	current_time += delta
 	handle_input()
 	play_animation_based_on_state()
-	update_action_hold_states()
 	update_velocity(delta)
 	move_and_slide()
 	
-func update_action_hold_states():
-	if Input.is_action_just_pressed("Interact"):
-			current_direction_locked = true
-	if Input.is_action_just_released("Interact"):
-			current_direction_locked = false
+func current_direction_locked():
+	return Input.is_action_just_pressed("Interact") or Manny.animation == "WallSlide" or Manny.animation == "WallLand"
 	
 func update_velocity(delta):
 	apply_gravity(delta)
@@ -101,18 +98,20 @@ func update_horizontal_velocity(direction: int):
 		velocity.x = lerp(velocity.x, 0.0, DECELERATION)
 			
 func apply_gravity(delta):
-	if not is_on_floor():
+	if current_state == State.WALLLAND or current_state == State.WALLSLIDE:
+		velocity.y += gravity * (delta * .5)
+	elif not is_on_floor():
 		velocity.y += gravity * delta
 		
 func get_input_direction() -> int:
 	var direction = 0
 	if Input.is_action_pressed("MoveLeft"):
-		if !current_direction_locked:
+		if !current_direction_locked():
 			current_direction = Direction.LEFT
 			Manny.flip_h = true
 		direction -= 1
 	if Input.is_action_pressed("MoveRight"):
-		if !current_direction_locked:
+		if !current_direction_locked():
 			current_direction = Direction.RIGHT
 			Manny.flip_h = false
 		direction += 1
@@ -127,16 +126,23 @@ func is_press_left():
 	
 func is_press_right():
 	return Input.is_action_just_pressed("MoveRight") or Input.is_action_pressed("MoveRight") and is_on_floor()
+	
+func is_land_on_wall():
+	return (Input.is_action_pressed("MoveLeft") or Input.is_action_pressed("MoveRight")) and ($RayCast2DLeft.is_colliding() or $RayCast2DRight.is_colliding()) and !is_on_floor()
 
 func is_sprinting():
 	return Input.is_action_pressed("Sprint")
 	
 func is_current_state_locked():
-	return (current_state == State.LAND and get_input_direction() == 0 and !is_crouching()) or current_state == State.SWORDSTAB
+	return (current_state == State.LAND and get_input_direction() == 0 and !is_crouching()) \
+		or current_state == State.SWORDSTAB or \
+		(current_state == State.WALLLAND and !is_on_floor())
 
 func handle_input():
 	if is_on_floor():
 		current_jump_state = JumpState.FLOOR
+	if current_state == State.WALLSLIDE and is_on_floor():
+		update_state(State.IDLE)
 	if is_current_state_locked(): return
 	if Input.is_action_just_pressed("Jump") and current_jump_state == JumpState.FLOOR:
 		jump_time = current_time
@@ -162,6 +168,8 @@ func handle_input():
 			update_state(State.RUN)
 		else:
 			update_state(State.WALK)
+	if is_land_on_wall():
+		update_state(State.WALLLAND)
 	if is_crouching():
 		update_state(State.CROUCH)
 	elif is_holding_push_pull():
@@ -220,6 +228,10 @@ func play_animation_based_on_state():
 			play_animation("JumpRoll")
 		State.LAND:
 			play_animation("LandOnGround")
+		State.WALLLAND:
+			play_animation("WallLand")
+		State.WALLSLIDE:
+			play_animation("WallSlide")
 		State.CROUCH:
 			play_animation("CrouchIdle")
 		State.PUSH:
@@ -246,5 +258,9 @@ func _set_state_idle():
 	if is_on_floor() and current_state == State.LAND:
 		current_state = State.IDLE
 	if current_state == State.SWORDSTAB:
+		current_state = State.IDLE
+	if current_state == State.WALLLAND:
+		current_state = State.WALLSLIDE
+	if current_state == State.WALLSLIDE and is_on_floor():
 		current_state = State.IDLE
 
