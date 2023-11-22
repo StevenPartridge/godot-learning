@@ -1,3 +1,4 @@
+RichTextLabel
 CollisionShape2D
 RayCast2D
 StaticBody2D

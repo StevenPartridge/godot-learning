@@ -10,3 +10,11 @@
 [node name="Manny3" parent="." instance=ExtResource("2_qt2m5")]
 position = Vector2(731, 209)
 scale = Vector2(6.96, 6.96)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 37.0
+offset_top = 37.0
+offset_right = 837.0
+offset_bottom = 117.0
+text = "Same as before but with Double Jump (W + W), Pushing and Pulling (E + A/D) and a Weapon!
+Also notice 'LandOnWall' animation as well as 'WallSlide'"

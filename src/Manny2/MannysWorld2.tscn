@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4ahdfeqp6y8q"]
+[gd_scene load_steps=3 format=3 uid="uid://c4ahdfeqp6y8q"]
 
 [ext_resource type="PackedScene" uid="uid://f061epmdy5ix" path="res://Extras/WallFrame.tscn" id="1_67nok"]
 [ext_resource type="PackedScene" uid="uid://cvru3wihhmkwa" path="res://Manny2/Manny2.tscn" id="2_rutcb"]
-[ext_resource type="Script" path="res://Manny2/Manny2.gd" id="3_bsslq"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,4 +10,10 @@
 [node name="Manny" parent="." instance=ExtResource("2_rutcb")]
 position = Vector2(368, 271)
 scale = Vector2(4.16, 4.16)
-script = ExtResource("3_bsslq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 34.0
+offset_top = 45.0
+offset_right = 584.0
+offset_bottom = 85.0
+text = "Manny #2, Sprint with Shift and notice the 'LandOnGround' animation"

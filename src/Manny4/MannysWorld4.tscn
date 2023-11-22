@@ -10,3 +10,12 @@
 [node name="Manny4" parent="." instance=ExtResource("2_qtrca")]
 position = Vector2(558, 265)
 scale = Vector2(5.52, 5.52)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 35.0
+offset_top = 43.0
+offset_right = 835.0
+offset_bottom = 123.0
+text = "Same as before, but much smoothed out.
+Additionally, 'Wall Jump', you can jump off the wall to reach even greater heights!
+Note: Adjusting physics for a more balanced experience"

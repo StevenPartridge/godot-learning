@@ -10,3 +10,11 @@
 [node name="Manny1" parent="." instance=ExtResource("2_3v8xs")]
 position = Vector2(565, 367)
 scale = Vector2(4.68, 4.68)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 23.0
+offset_top = 26.0
+offset_right = 573.0
+offset_bottom = 302.0
+text = "The first Manny, featuring walking animations. Press \"W\" to jump"
+fit_content = true

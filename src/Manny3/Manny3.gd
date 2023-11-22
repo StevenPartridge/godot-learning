@@ -67,7 +67,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func current_direction_locked():
-	return Input.is_action_just_pressed("Interact") or Manny.animation == "WallSlide" or Manny.animation == "WallLand"
+	return Input.is_action_pressed("Interact") or Manny.animation == "WallSlide" or Manny.animation == "WallLand"
 	
 func update_velocity(delta):
 	apply_gravity(delta)
