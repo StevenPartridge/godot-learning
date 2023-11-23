@@ -40,11 +40,11 @@ var current_time = 0.0
 var jump_time = current_time
 var wall_jump_time = current_time
 
-const WALL_JUMP_DELAY = 0.6
+const WALL_JUMP_DELAY = 0.5
 const DOUBLE_JUMP_DELAY = 0.2
 const SPEED = 300.0
 const SPEED_SPRINT = 500.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 const DECELERATION = 0.08
 
 enum Direction { LEFT, RIGHT }
@@ -112,8 +112,9 @@ func apply_gravity(delta):
 		velocity.y += gravity * delta
 		
 func get_input_direction() -> int:
-	if current_time - wall_jump_time < WALL_JUMP_DELAY:
-		return 0
+	if current_time > 0 and current_time - wall_jump_time < WALL_JUMP_DELAY:
+		if Manny.flip_h: return -1
+		else: return 1
 	var direction = 0
 	if Input.is_action_pressed("MoveLeft"):
 		if !current_direction_locked():

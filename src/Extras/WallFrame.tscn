@@ -58,7 +58,7 @@ position = Vector2(697, 653)
 rotation = 3.14159
 
 [node name="WallSection16" parent="." instance=ExtResource("1_71pe4")]
-position = Vector2(984, 650)
+position = Vector2(984, 653)
 rotation = 3.14159
 
 [node name="ControlPanel" parent="." instance=ExtResource("2_se22j")]
