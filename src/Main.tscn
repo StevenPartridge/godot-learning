@@ -59,6 +59,15 @@ mouse_default_cursor_shape = 2
 text = "Manny 4
 "
 
+[node name="GoToManny5" type="Button" parent="ButtonContainer"]
+offset_left = 369.0
+offset_top = 513.0
+offset_right = 669.0
+offset_bottom = 615.0
+mouse_default_cursor_shape = 2
+text = "Manny 5
+"
+
 [node name="WallContainer" parent="." instance=ExtResource("3_vdwaa")]
 
 [node name="BallContainer" type="Node" parent="."]
@@ -234,3 +243,4 @@ rotation = -0.261799
 [connection signal="pressed" from="ButtonContainer/GoToManny2" to="." method="_on_go_to_manny_2_pressed"]
 [connection signal="pressed" from="ButtonContainer/GoToManny3" to="." method="_on_go_to_manny_3_pressed"]
 [connection signal="pressed" from="ButtonContainer/GoToManny4" to="." method="_on_go_to_manny_4_pressed"]
+[connection signal="pressed" from="ButtonContainer/GoToManny5" to="." method="_on_go_to_manny_5_pressed"]
