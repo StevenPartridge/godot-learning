@@ -1,4 +1,4 @@
-[gd_scene load_steps=175 format=3 uid="uid://c2ubwtotplyjx"]
+[gd_scene load_steps=178 format=3 uid="uid://c2ubwtotplyjx"]
 
 [ext_resource type="Script" path="res://Manny5/Manny5.gd" id="1_e4to6"]
 [ext_resource type="Texture2D" uid="uid://bel3vbc0dugve" path="res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png" id="2_v3h44"]
@@ -19,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://d1a0k62p851rk" path="res://assets/animations/Manny/PlayerWalk/PlayerWalk 48x48.png" id="17_hq2ie"]
 [ext_resource type="Texture2D" uid="uid://eqplqxe3txet" path="res://assets/animations/Manny/Sprite Sheets/wall land 48x48.png" id="18_xnu1e"]
 [ext_resource type="Texture2D" uid="uid://buyr2cfj2ggvy" path="res://assets/animations/Manny/Sprite Sheets/Wall Slide 48x48.png" id="19_01qs6"]
+[ext_resource type="Script" path="res://Manny5/FiniteStateMachine.gd" id="20_c3lht"]
+[ext_resource type="Script" path="res://Manny5/StateIdle.gd" id="21_p47f0"]
+[ext_resource type="Script" path="res://Manny5/StateWalk.gd" id="22_micy1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nxw2"]
 atlas = ExtResource("2_v3h44")
@@ -1185,28 +1188,43 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0wxrh"]
-radius = 8.07022
-height = 18.6463
+radius = 14.5264
+height = 84.9442
 
 [node name="Manny5" type="CharacterBody2D"]
 script = ExtResource("1_e4to6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.88, 0.88)
+scale = Vector2(2.72, 2.72)
 sprite_frames = SubResource("SpriteFrames_xn0fi")
 animation = &"SmallJump"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
-scale = Vector2(1.23912, 0.965339)
+position = Vector2(-1.19209e-07, 9)
+rotation = -0.0218288
+scale = Vector2(1.63116, 1.01368)
 shape = SubResource("CapsuleShape2D_0wxrh")
 
 [node name="RayCast2DRight" type="RayCast2D" parent="."]
-target_position = Vector2(11, 0)
+target_position = Vector2(25, 0)
 
 [node name="RayCast2DLeft" type="RayCast2D" parent="."]
-target_position = Vector2(-11, 0)
+target_position = Vector2(-23, -1)
+
+[node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
+script = ExtResource("20_c3lht")
+state = NodePath("StateIdle")
+
+[node name="StateIdle" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("animator", "manny")]
+script = ExtResource("21_p47f0")
+animator = NodePath("../../AnimatedSprite2D")
+manny = NodePath("../..")
+
+[node name="StateWalk" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("animator", "manny")]
+script = ExtResource("22_micy1")
+animator = NodePath("../../AnimatedSprite2D")
+manny = NodePath("../..")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_set_state_idle"]
