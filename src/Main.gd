@@ -7,6 +7,7 @@ extends Node
 #		var new_ball = Ball.instantiate()
 #		new_ball.position = get_viewport().get_mouse_position()
 #		add_child(new_ball)
+		
 
 func _on_go_to_scene_1_pressed():
 	SceneManager.SwitchScene("HelloWorld")
