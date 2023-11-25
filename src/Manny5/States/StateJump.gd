@@ -35,10 +35,3 @@ func handle_horizontal_movement():
 	manny.velocity.x = manny.velocity.x
 	animator.flip_h = direction < 0
 
-func finish_jump():
-	# Transition to the next state when landing
-	# For example, to Idle or Walk, depending on movement
-	if manny.get_input_direction() != 0:
-		manny.fsm.change_state(manny.state_walk)
-	else:
-		manny.fsm.change_state(manny.state_idle)

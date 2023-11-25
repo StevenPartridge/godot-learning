@@ -6,9 +6,6 @@ extends Node
 func _ready():
 	change_state(state)
 
-func getState():
-	return state.get(name)
-
 func change_state(new_state: State):
 	if state is State:
 		state._exit_state()

@@ -47,7 +47,6 @@ func handle_input():
 	var direction = get_input_direction()
 	var is_moving = direction != 0
 	var is_jumping = Input.is_action_just_pressed("Jump") and is_on_floor()
-	var current_state = fsm.getState()
 	# Jump Logic
 	if is_jumping:
 		input_delay_until = current_time + DELAY_JUMP
