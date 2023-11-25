@@ -17,6 +17,7 @@ enum JumpState {
 @onready var wall_land = $FiniteStateMachine/WallLand
 @onready var state_wall_jump = $FiniteStateMachine/StateWallJump
 @onready var state_land = $FiniteStateMachine/StateLand
+@onready var state_crouch = $FiniteStateMachine/StateCrouch
 
 @export var SPEED = 200.0
 @export var SPEED_SPRINT = 500.0
@@ -60,11 +61,14 @@ func handle_input():
 	var is_moving = direction != 0
 	var is_jumping = Input.is_action_just_pressed("Jump") and jump_state == JumpState.FLOOR
 	var is_double_jumping = Input.is_action_just_pressed("Jump") and jump_state == JumpState.JUMP and !is_on_floor()
+	var is_crouching = Input.is_action_pressed("Crouch") and is_on_floor()
 
 	# print('flip_h: ', anim.flip_h, ', Is_jumping: ', is_jumping, ', jump_state == JumpState.JUMP: ', jump_state == JumpState.JUMP, ', is_on_wall: ', is_on_wall(), ', is_on_floor: ', is_on_floor())
 
 	# Jump Logic
-	if is_jumping:
+	if is_crouching:
+		fsm.change_state(state_crouch)	
+	elif is_jumping:
 		input_delay_until = current_time + JUMP_DELAY
 		fsm.change_state(state_jump)
 	elif !is_on_wall() and is_double_jumping:

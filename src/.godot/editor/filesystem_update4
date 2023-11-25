@@ -9,3 +9,4 @@ res://Manny5/States/StateWallLand.gd
 res://Manny5/States/StateWallJump.gd
 res://Manny5/States/StateIdle.gd
 res://Manny5/States/StateLand.gd
+res://Manny5/States/StateCrouch.gd
