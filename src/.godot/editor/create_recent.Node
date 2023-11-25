@@ -1,3 +1,4 @@
+StateJump
 StateWalk
 StateIdle
 FiniteStateMachine

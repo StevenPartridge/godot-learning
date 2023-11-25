@@ -10,3 +10,6 @@ res://Manny5/StateIdle.gd
 res://Manny5/FiniteStateMachine.gd
 res://Manny5/MannysWorld5.tscn
 res://Manny5/StateWalk.gd
+res://Manny5/States/StateJump.gd
+res://Manny5/States/StateWalk.gd
+res://Manny5/States/StateIdle.gd
