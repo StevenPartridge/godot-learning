@@ -16,6 +16,7 @@ enum JumpState {
 @onready var state_double_jump = $FiniteStateMachine/StateDoubleJump
 @onready var wall_land = $FiniteStateMachine/WallLand
 @onready var state_wall_jump = $FiniteStateMachine/StateWallJump
+@onready var state_land = $FiniteStateMachine/StateLand
 
 @export var SPEED = 200.0
 @export var SPEED_SPRINT = 500.0
@@ -49,6 +50,7 @@ func get_input_direction() -> int:
 const WALL_JUMP_DELAY = 0.5
 const DOUBLE_JUMP_DELAY = 0.2
 const JUMP_DELAY = 0.1
+const LAND_DELAY = 0.4
 func handle_input():
 	if is_on_floor():
 		jump_state = JumpState.FLOOR
@@ -70,14 +72,14 @@ func handle_input():
 		fsm.change_state(state_double_jump)
 	elif is_double_jumping and is_on_wall() and !is_on_floor():
 		input_delay_until = current_time + WALL_JUMP_DELAY
-		fsm.change_state(state_wall_jump) # todo wall_jump
-		print('WallJump')
+		fsm.change_state(state_wall_jump)
 	elif !is_on_floor() and is_on_wall():
-		print('WallLand')
 		fsm.change_state(wall_land)
 	elif is_on_floor():
-		reset_jump_states()
-		if is_moving:
+		if (fsm.state == state_jump or fsm.state == state_double_jump or fsm.state == state_wall_jump):
+			input_delay_until = current_time + LAND_DELAY
+			fsm.change_state(state_land)
+		elif is_moving:
 			fsm.change_state(state_walk)
 		else:
 			fsm.change_state(state_idle)
