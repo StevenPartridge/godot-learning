@@ -1204,7 +1204,7 @@ script = ExtResource("1_e4to6")
 texture_filter = 1
 scale = Vector2(2.72, 2.72)
 sprite_frames = SubResource("SpriteFrames_xn0fi")
-animation = &"LandOnGround"
+animation = &"PunchJab"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

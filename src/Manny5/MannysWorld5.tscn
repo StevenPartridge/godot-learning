@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1egf8n4j563a"]
+[gd_scene load_steps=5 format=3 uid="uid://c1egf8n4j563a"]
 
 [ext_resource type="PackedScene" uid="uid://f061epmdy5ix" path="res://Extras/WallFrame.tscn" id="1_15wtn"]
 [ext_resource type="PackedScene" uid="uid://bvbfkpdv1s02t" path="res://Extras/WallSection.tscn" id="3_2y4g8"]
 [ext_resource type="PackedScene" uid="uid://c2ubwtotplyjx" path="res://Manny5/Manny5.tscn" id="3_ie7oo"]
+[ext_resource type="PackedScene" uid="uid://g8mm8qgt803g" path="res://Interactive/MovableBlock/MovableBlock.tscn" id="4_malhj"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,3 +22,7 @@ rotation = 1.5708
 
 [node name="Manny5" parent="." instance=ExtResource("3_ie7oo")]
 position = Vector2(470, 252)
+scale = Vector2(1.8, 1.8)
+
+[node name="MovableBlock" parent="." instance=ExtResource("4_malhj")]
+position = Vector2(699, 280)

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-enum State {
+enum Estate {
 	IDLE,
 	WALK,
 	JUMP,
@@ -18,8 +18,8 @@ const DECELERATION = 0.08
 enum Direction { LEFT, RIGHT }
 var current_direction = Direction.RIGHT
 
-var current_state = State.JUMP
-var previous_state = State.IDLE
+var current_state = Estate.JUMP
+var previous_state = Estate.IDLE
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -83,58 +83,58 @@ func is_sprinting():
 	return Input.is_action_pressed("Sprint")
 
 func handle_input():
-	if current_state == State.LAND and get_input_direction() == 0 and !is_crouching(): return
+	if current_state == Estate.LAND and get_input_direction() == 0 and !is_crouching(): return
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	if !is_on_floor():
-		update_state(State.JUMP)
+		update_state(Estate.JUMP)
 	if is_press_left() and is_on_floor():
 		current_direction = Direction.LEFT
 		if is_sprinting():
-			update_state(State.RUN)
+			update_state(Estate.RUN)
 		else:
-			update_state(State.WALK)
+			update_state(Estate.WALK)
 		Manny.flip_h = true
 	if is_press_right() and is_on_floor():
 		current_direction = Direction.RIGHT
 		if is_sprinting():
-			update_state(State.RUN)
+			update_state(Estate.RUN)
 		else:
-			update_state(State.WALK)
+			update_state(Estate.WALK)
 		Manny.flip_h = false
 	if is_crouching():
-		update_state(State.CROUCH)
+		update_state(Estate.CROUCH)
 	elif is_on_floor() and get_input_direction() == 0:
-		update_state(State.IDLE)
+		update_state(Estate.IDLE)
 
-func update_state(state: State):
+func update_state(state: Estate):
 	# Update the state based on conditions, like landing
-	if is_on_floor() and previous_state == State.JUMP:
+	if is_on_floor() and previous_state == Estate.JUMP:
 		previous_state = current_state
-		current_state = State.LAND
+		current_state = Estate.LAND
 		return
 		
 	previous_state = current_state
 	current_state = state
 
 func play_animation_based_on_state():
-	if current_state == State.LAND and Manny.animation == "LandOnGround" and get_input_direction() == 0:
+	if current_state == Estate.LAND and Manny.animation == "LandOnGround" and get_input_direction() == 0:
 		return
 
 	match current_state:
-		State.IDLE:
+		Estate.IDLE:
 			play_animation("Idle")
-		State.WALK:
+		Estate.WALK:
 			play_animation("Walk")
-		State.RUN:
+		Estate.RUN:
 			play_animation("Run")
-		State.JUMP:
+		Estate.JUMP:
 			play_animation("SmallJump")
-		State.LAND:
+		Estate.LAND:
 			play_animation("LandOnGround")
 			# Set a deferred call to switch to idle after the landing animation
 			call_deferred("_set_state_idle")
-		State.CROUCH:
+		Estate.CROUCH:
 			play_animation("CrouchIdle")
 		# Add cases for other states
 
@@ -146,5 +146,5 @@ func play_animation(anim_name):
 
 func _set_state_idle():
 	if is_on_floor():
-		update_state(State.IDLE)
+		update_state(Estate.IDLE)
 

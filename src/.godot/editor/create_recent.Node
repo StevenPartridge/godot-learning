@@ -1,3 +1,6 @@
+CollisionShape2D
+Sprite2D
+RigidBody2D
 StateCrouch
 StateWallJump
 WallLand
@@ -6,7 +9,6 @@ StateJump
 StateWalk
 StateIdle
 FiniteStateMachine
-CollisionShape2D
 Area2D
 RichTextLabel
 RayCast2D
@@ -14,9 +16,7 @@ StaticBody2D
 AnimatedSprite2D
 CollisionPolygon2D
 AnimationPlayer
-Sprite2D
 CharacterBody2D
-RigidBody2D
 CanvasGroup
 AnimationTree
 Button

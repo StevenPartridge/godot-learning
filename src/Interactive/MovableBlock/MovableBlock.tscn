@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://g8mm8qgt803g"]
+
+[ext_resource type="Texture2D" uid="uid://cdlfbloalhu8s" path="res://assets/Assets 1024 Cave/Cave - Platforms.png" id="1_eegfk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4orys"]
+size = Vector2(301, 313)
+
+[node name="MovableBlock" type="RigidBody2D"]
+mass = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_eegfk")
+region_enabled = true
+region_rect = Rect2(667.71, 53.0429, 313.045, 328.188)
+region_filter_clip_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["grabable"]]
+position = Vector2(0.5, -0.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_4orys")
