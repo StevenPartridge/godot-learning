@@ -2,8 +2,6 @@ class_name Manny
 extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
-@onready var ray_cast_2d_left = $RayCast2DLeft
-@onready var ray_cast_2d_right = $RayCast2DRight
 
 @onready var fsm = $FiniteStateMachine
 @onready var state_idle = $FiniteStateMachine/StateIdle
@@ -11,9 +9,11 @@ extends CharacterBody2D
 @onready var state_jump = $FiniteStateMachine/StateJump
 @onready var state_double_jump = $FiniteStateMachine/StateDoubleJump
 @onready var wall_land = $FiniteStateMachine/WallLand
+@onready var state_wall_jump = $FiniteStateMachine/StateWallJump
 
-@export var WALL_JUMP_DELAY = 0.5
-@export var DOUBLE_JUMP_DELAY = 0.2
+const WALL_JUMP_DELAY = 0.5
+const DOUBLE_JUMP_DELAY = 0.2
+const JUMP_DELAY = 0.1
 @export var SPEED = 200.0
 @export var SPEED_SPRINT = 500.0
 @export var JUMP_VELOCITY = -600.0
@@ -23,7 +23,7 @@ extends CharacterBody2D
 var current_time = 0.0
 var input_delay_until = 0.0
 
-const DELAY_JUMP = 0.1
+
 
 @export var can_double_jump = true
 
@@ -48,19 +48,25 @@ func handle_input():
 		return
 	var direction = get_input_direction()
 	var is_moving = direction != 0
-	var is_jumping = Input.is_action_just_pressed("Jump") and is_on_floor()
+	var is_jumping = Input.is_action_just_pressed("Jump")
 	var is_double_jumping = Input.is_action_just_pressed("Jump") and can_double_jump and !is_on_floor()
+	
+	# print('flip_h: ', anim.flip_h, ', Is_jumping: ', is_jumping, ', can_double_jump: ', can_double_jump, ', is_on_wall: ', is_on_wall(), ', is_on_floor: ', is_on_floor())
+
 	# Jump Logic
-	if is_jumping:
-		input_delay_until = current_time + DELAY_JUMP
+	if is_jumping and is_on_floor():
+		input_delay_until = current_time + JUMP_DELAY
 		fsm.change_state(state_jump)
 	elif !is_on_wall() and is_double_jumping:
-		input_delay_until = current_time + DELAY_JUMP
+		input_delay_until = current_time + DOUBLE_JUMP_DELAY
 		fsm.change_state(state_double_jump)
+	elif is_jumping and can_double_jump and is_on_wall() and !is_on_floor():
+		input_delay_until = current_time + WALL_JUMP_DELAY
+		fsm.change_state(state_wall_jump) # todo wall_jump
+		print('WallJump')
 	elif !is_on_floor() and is_on_wall():
+		print('WallLand')
 		fsm.change_state(wall_land)
-	elif can_double_jump and is_on_wall():
-		fsm.change_state(wall_land) # todo wall_jump
 	elif is_on_floor():
 		reset_jump_states()
 		if is_moving:

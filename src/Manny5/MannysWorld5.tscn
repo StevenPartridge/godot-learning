@@ -17,7 +17,7 @@ text = "A complete rewrite utilizing a Finite State Machine class approach"
 
 [node name="Wall2" parent="." instance=ExtResource("3_2y4g8")]
 position = Vector2(891, 491)
-rotation = -1.57629
+rotation = 1.5708
 
 [node name="Manny5" parent="." instance=ExtResource("3_ie7oo")]
 position = Vector2(470, 252)

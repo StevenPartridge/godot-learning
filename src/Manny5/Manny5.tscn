@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=3 uid="uid://c2ubwtotplyjx"]
+[gd_scene load_steps=182 format=3 uid="uid://c2ubwtotplyjx"]
 
 [ext_resource type="Script" path="res://Manny5/Manny5.gd" id="1_e4to6"]
 [ext_resource type="Texture2D" uid="uid://bel3vbc0dugve" path="res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png" id="2_v3h44"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://Manny5/States/StateJump.gd" id="23_dj8n1"]
 [ext_resource type="Script" path="res://Manny5/States/StateDoubleJump.gd" id="24_07j5p"]
 [ext_resource type="Script" path="res://Manny5/States/StateWallLand.gd" id="25_1jqnf"]
+[ext_resource type="Script" path="res://Manny5/States/StateWallJump.gd" id="26_k0a8b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nxw2"]
 atlas = ExtResource("2_v3h44")
@@ -1210,12 +1211,6 @@ rotation = -0.0218288
 scale = Vector2(1.63116, 1.01368)
 shape = SubResource("CapsuleShape2D_0wxrh")
 
-[node name="RayCast2DRight" type="RayCast2D" parent="."]
-target_position = Vector2(25, 0)
-
-[node name="RayCast2DLeft" type="RayCast2D" parent="."]
-target_position = Vector2(-23, -1)
-
 [node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("20_c3lht")
 state = NodePath("StateIdle")
@@ -1242,5 +1237,10 @@ manny = NodePath("../..")
 
 [node name="WallLand" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("animator", "manny")]
 script = ExtResource("25_1jqnf")
+animator = NodePath("../../AnimatedSprite2D")
+manny = NodePath("../..")
+
+[node name="StateWallJump" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("animator", "manny")]
+script = ExtResource("26_k0a8b")
 animator = NodePath("../../AnimatedSprite2D")
 manny = NodePath("../..")

@@ -6,3 +6,4 @@ res://Main.tscn
 res://Manny5/MannysWorld5.tscn
 res://Manny5/States/StateJump.gd
 res://Manny5/States/StateWallLand.gd
+res://Manny5/States/StateWallJump.gd
