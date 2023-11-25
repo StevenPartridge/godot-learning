@@ -1,15 +1,3 @@
-res://Main.tscn
-res://Manny2/Manny2.gd
 res://Manny5/Manny5.tscn
-res://Main.gd
-res://Extras/SceneManager.tscn
-res://Manny5/State.gd
-res://Manny5/Manny5.gd
-res://Manny4/Manny4.gd
-res://Manny5/StateIdle.gd
-res://Manny5/FiniteStateMachine.gd
-res://Manny5/MannysWorld5.tscn
-res://Manny5/StateWalk.gd
-res://Manny5/States/StateJump.gd
-res://Manny5/States/StateWalk.gd
-res://Manny5/States/StateIdle.gd
+res://Manny2/Manny2.gd
+res://Manny5/States/StateDoubleJump.gd
