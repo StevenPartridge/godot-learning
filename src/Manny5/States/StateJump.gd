@@ -32,7 +32,7 @@ func apply_jump_force():
 
 func handle_horizontal_movement():
 	var direction = manny.get_input_direction()
-	manny.velocity.x = direction * (manny.SPEED if direction != 0 else manny.velocity.x)
+	manny.velocity.x = manny.velocity.x
 	animator.flip_h = direction < 0
 
 func finish_jump():
