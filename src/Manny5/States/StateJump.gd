@@ -4,25 +4,21 @@ extends State
 @export var animator: AnimatedSprite2D
 @export var manny: Manny
 
-
-
 func _ready():
 	set_physics_process(false)
 
 func _enter_state() -> void:
 	set_physics_process(true)
-	if animator.animation != "SmallJump":
-		animator.play("SmallJump")
-	
 
 func _exit_state() -> void:
 	set_physics_process(false)
 
 func _physics_process(delta):
 	handle_horizontal_movement()
-	if animator.animation != "JumpRoll":
-		animator.play("JumpRoll")
+	if animator.animation != "SmallJump":
+		animator.play("SmallJump")
 	if manny.is_on_floor():
+		manny.jump_state = manny.JumpState.JUMP
 		apply_jump_force()
 	else:
 		manny.velocity.y += manny.GRAVITY * delta
@@ -36,5 +32,5 @@ func handle_horizontal_movement():
 	# Continue moving in direction, but face where looking
 	manny.velocity.x = manny.velocity.x
 	var direction = manny.get_input_direction()
-	animator.flip_h = direction < 0
+	animator.flip_h = direction > 0 if abs(direction) > 1 else animator.flip_h
 

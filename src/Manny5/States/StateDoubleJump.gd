@@ -20,9 +20,9 @@ func _physics_process(delta):
 	handle_horizontal_movement()
 	if animator.animation != "JumpRoll":
 		animator.play("JumpRoll")
-	if manny.can_double_jump:
+	if manny.jump_state == manny.JumpState.JUMP:
 		apply_jump_force()
-		manny.can_double_jump = false
+		manny.jump_state = manny.JumpState.DOUBLEJUMP
 	else:
 		manny.velocity.y += manny.GRAVITY * delta
 	manny.move_and_slide()
@@ -34,5 +34,5 @@ func apply_jump_force():
 func handle_horizontal_movement():
 	var direction = manny.get_input_direction()
 	manny.velocity.x = manny.velocity.x
-	animator.flip_h = direction < 0
+	animator.flip_h = direction > 0 if abs(direction) > 1 else animator.flip_h
 

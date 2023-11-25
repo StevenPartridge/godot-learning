@@ -7,3 +7,5 @@ res://Manny5/MannysWorld5.tscn
 res://Manny5/States/StateJump.gd
 res://Manny5/States/StateWallLand.gd
 res://Manny5/States/StateWallJump.gd
+res://Manny5/States/StateIdle.gd
+res://Manny5/States/StateLand.gd

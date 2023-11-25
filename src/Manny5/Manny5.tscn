@@ -1,4 +1,4 @@
-[gd_scene load_steps=182 format=3 uid="uid://c2ubwtotplyjx"]
+[gd_scene load_steps=183 format=3 uid="uid://c2ubwtotplyjx"]
 
 [ext_resource type="Script" path="res://Manny5/Manny5.gd" id="1_e4to6"]
 [ext_resource type="Texture2D" uid="uid://bel3vbc0dugve" path="res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png" id="2_v3h44"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://Manny5/States/StateDoubleJump.gd" id="24_07j5p"]
 [ext_resource type="Script" path="res://Manny5/States/StateWallLand.gd" id="25_1jqnf"]
 [ext_resource type="Script" path="res://Manny5/States/StateWallJump.gd" id="26_k0a8b"]
+[ext_resource type="Script" path="res://Manny5/States/StateLand.gd" id="27_3lrfo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nxw2"]
 atlas = ExtResource("2_v3h44")
@@ -1202,7 +1203,7 @@ script = ExtResource("1_e4to6")
 texture_filter = 1
 scale = Vector2(2.72, 2.72)
 sprite_frames = SubResource("SpriteFrames_xn0fi")
-animation = &"SmallJump"
+animation = &"LandOnGround"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1242,5 +1243,10 @@ manny = NodePath("../..")
 
 [node name="StateWallJump" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("animator", "manny")]
 script = ExtResource("26_k0a8b")
+animator = NodePath("../../AnimatedSprite2D")
+manny = NodePath("../..")
+
+[node name="StateLand" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("animator", "manny")]
+script = ExtResource("27_3lrfo")
 animator = NodePath("../../AnimatedSprite2D")
 manny = NodePath("../..")

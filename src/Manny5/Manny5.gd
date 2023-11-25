@@ -1,6 +1,12 @@
 class_name Manny
 extends CharacterBody2D
 
+enum JumpState {
+	FLOOR,
+	JUMP,
+	DOUBLEJUMP
+}
+
 @onready var anim = $AnimatedSprite2D
 
 @onready var fsm = $FiniteStateMachine
@@ -11,15 +17,12 @@ extends CharacterBody2D
 @onready var wall_land = $FiniteStateMachine/WallLand
 @onready var state_wall_jump = $FiniteStateMachine/StateWallJump
 
-const WALL_JUMP_DELAY = 0.5
-const DOUBLE_JUMP_DELAY = 0.2
-const JUMP_DELAY = 0.1
 @export var SPEED = 200.0
 @export var SPEED_SPRINT = 500.0
 @export var JUMP_VELOCITY = -600.0
 @export var DECELERATION = 0.08
 @export var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity") as float
-
+@export var jump_state = JumpState.JUMP
 var current_time = 0.0
 var input_delay_until = 0.0
 
@@ -42,25 +45,30 @@ func get_input_direction() -> int:
 	if Input.is_action_pressed("MoveRight"):
 		direction += 1
 	return direction
-	
+
+const WALL_JUMP_DELAY = 0.5
+const DOUBLE_JUMP_DELAY = 0.2
+const JUMP_DELAY = 0.1
 func handle_input():
+	if is_on_floor():
+		jump_state = JumpState.FLOOR
 	if input_delay_until > current_time:
 		return
 	var direction = get_input_direction()
 	var is_moving = direction != 0
-	var is_jumping = Input.is_action_just_pressed("Jump")
-	var is_double_jumping = Input.is_action_just_pressed("Jump") and can_double_jump and !is_on_floor()
-	
-	# print('flip_h: ', anim.flip_h, ', Is_jumping: ', is_jumping, ', can_double_jump: ', can_double_jump, ', is_on_wall: ', is_on_wall(), ', is_on_floor: ', is_on_floor())
+	var is_jumping = Input.is_action_just_pressed("Jump") and jump_state == JumpState.FLOOR
+	var is_double_jumping = Input.is_action_just_pressed("Jump") and jump_state == JumpState.JUMP and !is_on_floor()
+
+	# print('flip_h: ', anim.flip_h, ', Is_jumping: ', is_jumping, ', jump_state == JumpState.JUMP: ', jump_state == JumpState.JUMP, ', is_on_wall: ', is_on_wall(), ', is_on_floor: ', is_on_floor())
 
 	# Jump Logic
-	if is_jumping and is_on_floor():
+	if is_jumping:
 		input_delay_until = current_time + JUMP_DELAY
 		fsm.change_state(state_jump)
 	elif !is_on_wall() and is_double_jumping:
 		input_delay_until = current_time + DOUBLE_JUMP_DELAY
 		fsm.change_state(state_double_jump)
-	elif is_jumping and can_double_jump and is_on_wall() and !is_on_floor():
+	elif is_double_jumping and is_on_wall() and !is_on_floor():
 		input_delay_until = current_time + WALL_JUMP_DELAY
 		fsm.change_state(state_wall_jump) # todo wall_jump
 		print('WallJump')
@@ -75,4 +83,4 @@ func handle_input():
 			fsm.change_state(state_idle)
 
 func reset_jump_states():
-	can_double_jump = true  # Reset double jump when on the floor
+	jump_state = JumpState.FLOOR  # Reset double jump when on the floor

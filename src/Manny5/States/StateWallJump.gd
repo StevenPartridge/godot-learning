@@ -16,14 +16,14 @@ func _exit_state() -> void:
 func _physics_process(delta):
 	if animator.animation != "SmallJump":
 		animator.play("SmallJump")
-	if manny.can_double_jump:
+	if manny.jump_state == manny.JumpState.JUMP:
 		if animator.flip_h:
 			manny.velocity.x = 1 * manny.SPEED
 		else:
 			manny.velocity.x = -1 * manny.SPEED
 		animator.flip_h = !animator.flip_h
 		apply_jump_force()
-		manny.can_double_jump = false
+		manny.jump_state = manny.JumpState.DOUBLEJUMP
 	else:
 		manny.velocity.y += manny.GRAVITY * delta
 	handle_horizontal_movement()
