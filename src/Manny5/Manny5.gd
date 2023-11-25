@@ -10,12 +10,13 @@ extends CharacterBody2D
 @onready var state_walk = $FiniteStateMachine/StateWalk
 @onready var state_jump = $FiniteStateMachine/StateJump
 @onready var state_double_jump = $FiniteStateMachine/StateDoubleJump
+@onready var wall_land = $FiniteStateMachine/WallLand
 
 @export var WALL_JUMP_DELAY = 0.5
 @export var DOUBLE_JUMP_DELAY = 0.2
 @export var SPEED = 200.0
 @export var SPEED_SPRINT = 500.0
-@export var JUMP_VELOCITY = -500.0
+@export var JUMP_VELOCITY = -600.0
 @export var DECELERATION = 0.08
 @export var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity") as float
 
@@ -53,9 +54,13 @@ func handle_input():
 	if is_jumping:
 		input_delay_until = current_time + DELAY_JUMP
 		fsm.change_state(state_jump)
-	elif is_double_jumping:
+	elif !is_on_wall() and is_double_jumping:
 		input_delay_until = current_time + DELAY_JUMP
 		fsm.change_state(state_double_jump)
+	elif !is_on_floor() and is_on_wall():
+		fsm.change_state(wall_land)
+	elif can_double_jump and is_on_wall():
+		fsm.change_state(wall_land) # todo wall_jump
 	elif is_on_floor():
 		reset_jump_states()
 		if is_moving:
