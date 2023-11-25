@@ -20,6 +20,8 @@ func _exit_state() -> void:
 
 func _physics_process(delta):
 	handle_horizontal_movement()
+	if animator.animation != "JumpRoll":
+		animator.play("JumpRoll")
 	if manny.is_on_floor():
 		apply_jump_force()
 	else:

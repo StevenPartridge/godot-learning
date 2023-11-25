@@ -11,8 +11,6 @@ func _ready():
 
 func _enter_state() -> void:
 	set_physics_process(true)
-	if animator.animation != "SmallJump":
-		animator.play("SmallJump")
 	
 
 func _exit_state() -> void:
@@ -20,8 +18,11 @@ func _exit_state() -> void:
 
 func _physics_process(delta):
 	handle_horizontal_movement()
-	if manny.is_on_floor():
+	if animator.animation != "JumpRoll":
+		animator.play("JumpRoll")
+	if manny.can_double_jump:
 		apply_jump_force()
+		manny.can_double_jump = false
 	else:
 		manny.velocity.y += manny.GRAVITY * delta
 	manny.move_and_slide()

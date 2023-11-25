@@ -1,3 +1,7 @@
 res://Manny5/Manny5.tscn
 res://Manny2/Manny2.gd
 res://Manny5/States/StateDoubleJump.gd
+res://Manny5/Manny5.gd
+res://Main.tscn
+res://Manny5/MannysWorld5.tscn
+res://Manny5/States/StateJump.gd
