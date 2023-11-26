@@ -1,4 +1,4 @@
-class_name StateIdle
+class_name StatePushPullIdle
 extends State
 
 @export var animator: AnimatedSprite2D
@@ -17,6 +17,6 @@ func _exit_state() -> void:
 
 func _physics_process(_delta):
 	if manny.is_on_floor():
-		animator.play("Idle")
-	manny.velocity.x = lerp(manny.velocity.x, 0.0, manny.DECELERATION)
+		animator.play("InteractionPushPullIdle")
+	manny.velocity.x = 0
 	manny.move_and_slide()

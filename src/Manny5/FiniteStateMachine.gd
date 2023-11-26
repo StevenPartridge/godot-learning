@@ -7,6 +7,7 @@ func _ready():
 	change_state(state)
 
 func change_state(new_state: State):
+	print(new_state.name)
 	if state is State:
 		state._exit_state()
 	new_state._enter_state()

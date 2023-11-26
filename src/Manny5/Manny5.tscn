@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=3 uid="uid://c2ubwtotplyjx"]
+[gd_scene load_steps=186 format=3 uid="uid://c2ubwtotplyjx"]
 
 [ext_resource type="Script" path="res://Manny5/Manny5.gd" id="1_e4to6"]
 [ext_resource type="Texture2D" uid="uid://bel3vbc0dugve" path="res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png" id="2_v3h44"]
@@ -28,6 +28,7 @@
 [ext_resource type="Script" path="res://Manny5/States/StateWallJump.gd" id="26_k0a8b"]
 [ext_resource type="Script" path="res://Manny5/States/StateLand.gd" id="27_3lrfo"]
 [ext_resource type="Script" path="res://Manny5/States/StateCrouch.gd" id="28_dlahs"]
+[ext_resource type="Script" path="res://Manny5/States/StatePushPullIdle.gd" id="29_bddhp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nxw2"]
 atlas = ExtResource("2_v3h44")
@@ -1194,8 +1195,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0wxrh"]
-radius = 14.5264
-height = 84.9442
+radius = 10.4597
+height = 76.9721
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36qlh"]
+size = Vector2(61, 20)
 
 [node name="Manny5" type="CharacterBody2D"]
 script = ExtResource("1_e4to6")
@@ -1204,7 +1208,7 @@ script = ExtResource("1_e4to6")
 texture_filter = 1
 scale = Vector2(2.72, 2.72)
 sprite_frames = SubResource("SpriteFrames_xn0fi")
-animation = &"PunchJab"
+animation = &"InteractionPushPullIdle"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1212,6 +1216,10 @@ position = Vector2(-1.19209e-07, 9)
 rotation = -0.0218288
 scale = Vector2(1.63116, 1.01368)
 shape = SubResource("CapsuleShape2D_0wxrh")
+
+[node name="CollisionShape2DInteract" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_36qlh")
 
 [node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("20_c3lht")
@@ -1254,5 +1262,10 @@ manny = NodePath("../..")
 
 [node name="StateCrouch" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("animator", "manny")]
 script = ExtResource("28_dlahs")
+animator = NodePath("../../AnimatedSprite2D")
+manny = NodePath("../..")
+
+[node name="StatePushPullIdle" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("animator", "manny")]
+script = ExtResource("29_bddhp")
 animator = NodePath("../../AnimatedSprite2D")
 manny = NodePath("../..")

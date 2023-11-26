@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1700939624
+::res://::1700978503
 icon.svg::CompressedTexture2D::7951457360396824501::1698099464::1698628305::1::::<><>::
 Main.gd::GDScript::-1::1700892746::0::1::::<>Node<>::
-Main.tscn::PackedScene::2580185021150866616::1700938857::0::1::::<><>::res://Main.gd<>uid://dm5jrnxmxnuof::::res://Extras/Ball.tscn<>uid://f061epmdy5ix::::res://Extras/WallFrame.tscn
+Main.tscn::PackedScene::2580185021150866616::1700944610::0::1::::<><>::res://Main.gd<>uid://dm5jrnxmxnuof::::res://Extras/Ball.tscn<>uid://f061epmdy5ix::::res://Extras/WallFrame.tscn
 ::res://assets/::1700939967
 ballBlue_10.png::CompressedTexture2D::8698298520458212912::1698099464::1700192703::1::::<><>::
 HelloWorldTextBackground.png::CompressedTexture2D::7020081808848690602::1698631671::1698631679::1::::<><>::
@@ -78,7 +78,7 @@ Player Sword Stab 96x48.png::CompressedTexture2D::8483997701122738230::168662700
 ::res://assets/animations/Manny/Tilemap/::1700028695
 160x160 background tilemap.png::CompressedTexture2D::5838795334084514604::1687490572::1700028695::1::::<><>::
 Basic Tilemap.png::CompressedTexture2D::8889978580099928009::1687490572::1700028695::1::::<><>::
-::res://assets/Assets 1024 Cave/::1577825768
+::res://assets/Assets 1024 Cave/::1700940155
 Cave - BigRocks1.png::CompressedTexture2D::8644142268974538598::1577586156::1700940154::1::::<><>::
 Cave - Floor.png::CompressedTexture2D::8022107059429063284::1577648252::1700940155::1::::<><>::
 Cave - Platforms.png::CompressedTexture2D::5006422023751806508::1577583166::1700940154::1::::<><>::
@@ -94,7 +94,7 @@ ResetButton.png::CompressedTexture2D::2820730067942393989::1698635199::170019267
 Bouncy Platform Long.png::CompressedTexture2D::7895792475247486234::1698099464::1700192634::1::::<><>::
 Bouncy Platform Medium.png::CompressedTexture2D::3192301516354317244::1698099464::1700192634::1::::<><>::
 ::res://assets/Vegetation/::1592249868
-::res://assets/Vegetation/Comp 1/::1592249868
+::res://assets/Vegetation/Comp 1/::1700940154
 PlantSmall_00000.png::CompressedTexture2D::2741814107778447579::1577235060::1700940154::1::::<><>::
 PlantSmall_00001.png::CompressedTexture2D::2296625833990517568::1577235060::1700940154::1::::<><>::
 PlantSmall_00002.png::CompressedTexture2D::3189321416662702601::1577235060::1700940154::1::::<><>::
@@ -125,7 +125,7 @@ PlantSmall_00026.png::CompressedTexture2D::3029404859336641206::1577235060::1700
 PlantSmall_00027.png::CompressedTexture2D::2004202299738891669::1577235060::1700940154::1::::<><>::
 PlantSmall_00028.png::CompressedTexture2D::2526682506491259982::1577235060::1700940154::1::::<><>::
 PlantSmall_00029.png::CompressedTexture2D::356706032417292635::1577235060::1700940154::1::::<><>::
-::res://assets/Vegetation/Grass2/::1592249868
+::res://assets/Vegetation/Grass2/::1700940154
 Grass2_00000.png::CompressedTexture2D::7275625401631387020::1577252848::1700940154::1::::<><>::
 Grass2_00001.png::CompressedTexture2D::1805899812374686701::1577252848::1700940154::1::::<><>::
 Grass2_00002.png::CompressedTexture2D::1723626260004641158::1577252848::1700940154::1::::<><>::
@@ -156,7 +156,7 @@ Grass2_00026.png::CompressedTexture2D::8195197099182589845::1577252848::17009401
 Grass2_00027.png::CompressedTexture2D::8705409156450065072::1577252848::1700940154::1::::<><>::
 Grass2_00028.png::CompressedTexture2D::2517269332008518492::1577252848::1700940154::1::::<><>::
 Grass2_00029.png::CompressedTexture2D::3848457936895545869::1577252848::1700940154::1::::<><>::
-::res://assets/Vegetation/Grass3/::1592249868
+::res://assets/Vegetation/Grass3/::1700940154
 Comp 1_00000.png::CompressedTexture2D::3104448562987932607::1577272242::1700940154::1::::<><>::
 Comp 1_00001.png::CompressedTexture2D::214010866375387239::1577272242::1700940154::1::::<><>::
 Comp 1_00002.png::CompressedTexture2D::7790676455451720568::1577272242::1700940154::1::::<><>::
@@ -187,7 +187,7 @@ Comp 1_00026.png::CompressedTexture2D::6120238301073295672::1577272242::17009401
 Comp 1_00027.png::CompressedTexture2D::5444294509500399173::1577272242::1700940154::1::::<><>::
 Comp 1_00028.png::CompressedTexture2D::6123587823640589731::1577272242::1700940154::1::::<><>::
 Comp 1_00029.png::CompressedTexture2D::1708187639132786568::1577272242::1700940154::1::::<><>::
-::res://assets/Vegetation/Grass4/::1592249868
+::res://assets/Vegetation/Grass4/::1700940154
 Grass3_00000.png::CompressedTexture2D::8882974070255904588::1577271840::1700940154::1::::<><>::
 Grass3_00001.png::CompressedTexture2D::7260338371245263761::1577271840::1700940154::1::::<><>::
 Grass3_00002.png::CompressedTexture2D::6938749475123753789::1577271840::1700940154::1::::<><>::
@@ -218,7 +218,7 @@ Grass3_00026.png::CompressedTexture2D::8606679458517344115::1577271842::17009401
 Grass3_00027.png::CompressedTexture2D::305276090738359547::1577271842::1700940153::1::::<><>::
 Grass3_00028.png::CompressedTexture2D::1554836524286806366::1577271842::1700940153::1::::<><>::
 Grass3_00029.png::CompressedTexture2D::8892097988936698922::1577271842::1700940153::1::::<><>::
-::res://assets/Vegetation/Grass5/::1592249868
+::res://assets/Vegetation/Grass5/::1700940154
 Plant5_00000.png::CompressedTexture2D::8802187995210819201::1578442986::1700940154::1::::<><>::
 Plant5_00001.png::CompressedTexture2D::5447993402948546490::1578442986::1700940154::1::::<><>::
 Plant5_00002.png::CompressedTexture2D::8075278688889295185::1578442986::1700940154::1::::<><>::
@@ -260,7 +260,7 @@ Plant5_00037.png::CompressedTexture2D::7964120679948028628::1578442998::17009401
 Plant5_00038.png::CompressedTexture2D::7821832281235441389::1578442998::1700940154::1::::<><>::
 Plant5_00039.png::CompressedTexture2D::3696602874397286022::1578442998::1700940154::1::::<><>::
 ::res://assets/Vegetation/Grass5/Almacenamiento automático de Adobe After Effects/::1592249868
-::res://assets/Vegetation/Group Plant/::1592249868
+::res://assets/Vegetation/Group Plant/::1700940154
 GroupPlants_00000.png::CompressedTexture2D::2846586284206413540::1577409366::1700940154::1::::<><>::
 GroupPlants_00001.png::CompressedTexture2D::8725047148535316824::1577409366::1700940154::1::::<><>::
 GroupPlants_00002.png::CompressedTexture2D::9005009919034086978::1577409366::1700940154::1::::<><>::
@@ -317,23 +317,23 @@ Zoidberg2.gd::GDScript::-1::1700027143::0::1::::<>CharacterBody2D<>::
 Zoidberg2.tscn::PackedScene::7854808874884905052::1700193070::0::1::::<><>::res://Chompers/Zoidberg2.gd<>uid://cjbjo3lnpj4yj
 Zoidberg.gd::GDScript::-1::1700027213::0::1::::<>CharacterBody2D<>::
 Zoidberg.tscn::PackedScene::1334992180406899690::1700192882::0::1::::<><>::res://Chompers/Zoidberg.gd<>uid://c42mmskwhc7on
-::res://Extras/::1700938858
+::res://Extras/::1700944610
 Ball.gd::GDScript::-1::1700896177::0::1::::<>RigidBody2D<>::
-Ball.tscn::PackedScene::8064037037699315273::1700938858::0::1::::<><>::uid://dv6rx85s1gy3i::::res://assets/ballBlue_10.png<>res://Extras/Ball.gd
+Ball.tscn::PackedScene::8064037037699315273::1700944610::0::1::::<><>::uid://dv6rx85s1gy3i::::res://assets/ballBlue_10.png<>res://Extras/Ball.gd
 ControlPanel.gd::GDScript::-1::1698888163::0::1::::<>Node<>::
 ControlPanel.tscn::PackedScene::8605902646047803552::1700192819::0::1::::<><>::res://Extras/ControlPanel.gd<>uid://domelrutqf7ys
 SceneManager.gd::GDScript::-1::1700194124::0::1::::NSceneManager<>Node<>::
 SceneManager.tscn::PackedScene::6176033463565760415::1700857365::0::1::::<><>::res://Extras/SceneManager.gd
 WallFrame.tscn::PackedScene::404482553274623183::1700699842::0::1::::<><>::uid://bvbfkpdv1s02t
 WallSection.gd::GDScript::-1::1700896249::0::1::::<>StaticBody2D<>::
-WallSection.tscn::PackedScene::3862773014223013533::1700938858::0::1::::<><>::res://Extras/WallSection.gd<>uid://dkq1swbmmxmbq::::res://assets/Frame/Bouncy Platform Long.png
+WallSection.tscn::PackedScene::3862773014223013533::1700944610::0::1::::<><>::res://Extras/WallSection.gd<>uid://dkq1swbmmxmbq::::res://assets/Frame/Bouncy Platform Long.png
 ::res://HelloWorld/::1700194266
 HelloWorld.tscn::PackedScene::8356432424998664112::1700194266::0::1::::<><>::uid://ceakqtcr20472
 HelloWorldButton.gd::GDScript::-1::1698639348::0::1::::<>RigidBody2D<>::
 HelloWorldButton.tscn::PackedScene::5054233486411236711::1698638886::0::1::::<><>::uid://c7atyslp02rc1
 ::res://Interactive/::1700939635
-::res://Interactive/MovableBlock/::1700939651
-MovableBlock.tscn::PackedScene::490009319438978458::1700939651::0::1::::<><>::
+::res://Interactive/MovableBlock/::1700944610
+MovableBlock.tscn::PackedScene::490009319438978458::1700944610::0::1::::<><>::uid://cdlfbloalhu8s::::res://assets/Assets 1024 Cave/Cave - Platforms.png
 ::res://Manny2/::1700938851
 Manny2.gd::GDScript::-1::1700938851::0::1::::<>CharacterBody2D<>::
 Manny2.tscn::PackedScene::6283167015888589508::1700242540::0::1::::<><>::res://Manny2/Manny2.gd<>uid://bel3vbc0dugve
@@ -346,11 +346,11 @@ MannysWorld3.tscn::PackedScene::5427277957995387065::1700696977::0::1::::<><>::u
 Manny4.gd::GDScript::-1::1700850876::0::1::::<>CharacterBody2D<>::
 Manny4.tscn::PackedScene::9153253522028893872::1700699842::0::1::::<><>::res://Manny4/Manny4.gd<>uid://bel3vbc0dugve
 MannysWorld4.tscn::PackedScene::7966333031597062218::1700699842::0::1::::<><>::uid://f061epmdy5ix
-::res://Manny5/::1700938858
+::res://Manny5/::1700944610
 FiniteStateMachine.gd::GDScript::-1::1700882451::0::1::::FiniteStateMachine<>Node<>::
 Manny5.gd::GDScript::-1::1700891967::0::1::::Manny<>CharacterBody2D<>::
-Manny5.tscn::PackedScene::6709328725607639249::1700938857::0::1::::<><>::res://Manny5/Manny5.gd<>uid://bel3vbc0dugve::::res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png<>uid://cxl5wv8a0ctpw::::res://assets/animations/Manny/Sprite Sheets/Character Idle 48x48.png<>uid://dom8p4lbe3cjm::::res://assets/animations/Manny/Pull/Player Pull 48x48.png<>uid://bdsceij6n8qbl::::res://assets/animations/Manny/Push/player push 48x48.png<>uid://b0dkj4fmrcl7i::::res://assets/animations/Manny/PlayerIdlePushPull/player push idle 48x48.png<>uid://cx305aiiprqba::::res://assets/animations/Manny/Air Spin/player air spin 48x48.png<>uid://efyehmqh3wyv::::res://assets/animations/Manny/Sprite Sheets/player land 48x48.png<>uid://brov0k4o5tw8o::::res://assets/animations/Manny/Punch Cross/Player Punch Cross 64x64.png<>uid://csvhe2kwnw4lj::::res://assets/animations/Manny/Player Punch/Player Punch 64x64.png<>uid://bjkc4hbop5wl3::::res://assets/animations/Manny/Punch Jab/Player Jab 48x48.png<>uid://bofhwds88qr4t::::res://assets/animations/Manny/Sprite Sheets/run cycle 48x48.png<>uid://bykhyv6gwdd3g::::res://assets/animations/Manny/Sprite Sheets/player jump 48x48.png<>uid://dyul8k5wbbfa7::::res://assets/animations/Manny/Player Sword Idle/Player Sword Idle 48x48.png<>uid://ceshotb2oljlc::::res://assets/animations/Manny/Player Sword Run/Player Sword Run 48x48.png<>uid://ds4yg5hm6m56q::::res://assets/animations/Manny/Sword Stab/Player Sword Stab 96x48.png<>uid://d1a0k62p851rk::::res://assets/animations/Manny/PlayerWalk/PlayerWalk 48x48.png<>uid://eqplqxe3txet::::res://assets/animations/Manny/Sprite Sheets/wall land 48x48.png<>uid://buyr2cfj2ggvy::::res://assets/animations/Manny/Sprite Sheets/Wall Slide 48x48.png<>res://Manny5/FiniteStateMachine.gd<>res://Manny5/States/StateIdle.gd<>res://Manny5/States/StateWalk.gd<>res://Manny5/States/StateJump.gd<>res://Manny5/States/StateDoubleJump.gd<>res://Manny5/States/StateWallLand.gd<>res://Manny5/States/StateWallJump.gd<>res://Manny5/States/StateLand.gd<>res://Manny5/States/StateCrouch.gd
-MannysWorld5.tscn::PackedScene::6606383798601288852::1700938858::0::1::::<><>::uid://f061epmdy5ix::::res://Extras/WallFrame.tscn<>uid://bvbfkpdv1s02t::::res://Extras/WallSection.tscn<>uid://c2ubwtotplyjx::::res://Manny5/Manny5.tscn
+Manny5.tscn::PackedScene::6709328725607639249::1700944610::0::1::::<><>::res://Manny5/Manny5.gd<>uid://bel3vbc0dugve::::res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png<>uid://cxl5wv8a0ctpw::::res://assets/animations/Manny/Sprite Sheets/Character Idle 48x48.png<>uid://dom8p4lbe3cjm::::res://assets/animations/Manny/Pull/Player Pull 48x48.png<>uid://bdsceij6n8qbl::::res://assets/animations/Manny/Push/player push 48x48.png<>uid://b0dkj4fmrcl7i::::res://assets/animations/Manny/PlayerIdlePushPull/player push idle 48x48.png<>uid://cx305aiiprqba::::res://assets/animations/Manny/Air Spin/player air spin 48x48.png<>uid://efyehmqh3wyv::::res://assets/animations/Manny/Sprite Sheets/player land 48x48.png<>uid://brov0k4o5tw8o::::res://assets/animations/Manny/Punch Cross/Player Punch Cross 64x64.png<>uid://csvhe2kwnw4lj::::res://assets/animations/Manny/Player Punch/Player Punch 64x64.png<>uid://bjkc4hbop5wl3::::res://assets/animations/Manny/Punch Jab/Player Jab 48x48.png<>uid://bofhwds88qr4t::::res://assets/animations/Manny/Sprite Sheets/run cycle 48x48.png<>uid://bykhyv6gwdd3g::::res://assets/animations/Manny/Sprite Sheets/player jump 48x48.png<>uid://dyul8k5wbbfa7::::res://assets/animations/Manny/Player Sword Idle/Player Sword Idle 48x48.png<>uid://ceshotb2oljlc::::res://assets/animations/Manny/Player Sword Run/Player Sword Run 48x48.png<>uid://ds4yg5hm6m56q::::res://assets/animations/Manny/Sword Stab/Player Sword Stab 96x48.png<>uid://d1a0k62p851rk::::res://assets/animations/Manny/PlayerWalk/PlayerWalk 48x48.png<>uid://eqplqxe3txet::::res://assets/animations/Manny/Sprite Sheets/wall land 48x48.png<>uid://buyr2cfj2ggvy::::res://assets/animations/Manny/Sprite Sheets/Wall Slide 48x48.png<>res://Manny5/FiniteStateMachine.gd<>res://Manny5/States/StateIdle.gd<>res://Manny5/States/StateWalk.gd<>res://Manny5/States/StateJump.gd<>res://Manny5/States/StateDoubleJump.gd<>res://Manny5/States/StateWallLand.gd<>res://Manny5/States/StateWallJump.gd<>res://Manny5/States/StateLand.gd<>res://Manny5/States/StateCrouch.gd
+MannysWorld5.tscn::PackedScene::6606383798601288852::1700944610::0::1::::<><>::uid://f061epmdy5ix::::res://Extras/WallFrame.tscn<>uid://bvbfkpdv1s02t::::res://Extras/WallSection.tscn<>uid://c2ubwtotplyjx::::res://Manny5/Manny5.tscn<>uid://g8mm8qgt803g::::res://Interactive/MovableBlock/MovableBlock.tscn
 State.gd::GDScript::-1::1700851364::0::1::::State<>Node<>::
 ::res://Manny5/States/::1700891853
 StateCrouch.gd::GDScript::-1::1700891853::0::1::::StateCrouch<>State<>::
