@@ -1,5 +1,7 @@
-StatePushPullIdle
+PinJoint2D
+RayCast2D
 CollisionShape2D
+StatePushPullIdle
 Sprite2D
 RigidBody2D
 StateCrouch
@@ -12,7 +14,6 @@ StateIdle
 FiniteStateMachine
 Area2D
 RichTextLabel
-RayCast2D
 StaticBody2D
 AnimatedSprite2D
 CollisionPolygon2D

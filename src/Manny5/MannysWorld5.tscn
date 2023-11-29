@@ -24,5 +24,5 @@ rotation = 1.5708
 position = Vector2(470, 252)
 scale = Vector2(1.8, 1.8)
 
-[node name="MovableBlock" parent="." instance=ExtResource("4_malhj")]
+[node name="MovableBlock" parent="." groups=["can_push_pull"] instance=ExtResource("4_malhj")]
 position = Vector2(699, 280)

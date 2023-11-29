@@ -8,6 +8,8 @@ enum JumpState {
 }
 
 @onready var anim = $AnimatedSprite2D
+@onready var ray_cast_2d_right = $RayCast2DRight
+@onready var ray_cast_2d_2_left = $RayCast2D2Left
 
 @onready var fsm = $FiniteStateMachine
 @onready var state_idle = $FiniteStateMachine/StateIdle
@@ -22,8 +24,9 @@ enum JumpState {
 
 @export var SPEED = 200.0
 @export var SPEED_SPRINT = 500.0
+@export var SPEED_PUSH_PULL = 100.0
 @export var JUMP_VELOCITY = -600.0
-@export var DECELERATION = 0.08
+@export var DECELERATION = 0.12
 @export var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity") as float
 @export var jump_state = JumpState.JUMP
 var current_time = 0.0
@@ -40,6 +43,16 @@ func _physics_process(delta):
 	current_time += delta
 	velocity.y += GRAVITY * delta
 	handle_input()
+
+func get_collider():
+	return ray_cast_2d_right.get_collider()
+
+func get_is_grab_allowed():	
+	var collider = get_collider()
+	if collider is Node:
+		if collider.is_in_group("can_push_pull"):
+			return true
+	return false
 
 func get_input_direction() -> int:
 	var direction = 0
@@ -85,9 +98,9 @@ func handle_input():
 		if (fsm.state == state_jump or fsm.state == state_double_jump or fsm.state == state_wall_jump):
 			input_delay_until = current_time + LAND_DELAY
 			fsm.change_state(state_land)
-		elif is_moving:
+		elif is_moving and !is_interacting:
 			fsm.change_state(state_walk)
-		elif is_interacting:
+		elif is_interacting and get_is_grab_allowed():
 			fsm.change_state(state_push_pull_idle)
 		else:
 			fsm.change_state(state_idle)

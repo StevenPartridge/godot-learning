@@ -1194,9 +1194,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0wxrh"]
-radius = 10.4597
-height = 76.9721
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwn2m"]
+size = Vector2(20, 38.5588)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36qlh"]
 size = Vector2(61, 20)
@@ -1208,14 +1207,14 @@ script = ExtResource("1_e4to6")
 texture_filter = 1
 scale = Vector2(2.72, 2.72)
 sprite_frames = SubResource("SpriteFrames_xn0fi")
-animation = &"InteractionPushPullIdle"
+animation = &"SwordRun"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.19209e-07, 9)
+position = Vector2(0.205312, 18.4041)
 rotation = -0.0218288
 scale = Vector2(1.63116, 1.01368)
-shape = SubResource("CapsuleShape2D_0wxrh")
+shape = SubResource("RectangleShape2D_qwn2m")
 
 [node name="CollisionShape2DInteract" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
@@ -1269,3 +1268,9 @@ manny = NodePath("../..")
 script = ExtResource("29_bddhp")
 animator = NodePath("../../AnimatedSprite2D")
 manny = NodePath("../..")
+
+[node name="RayCast2DRight" type="RayCast2D" parent="."]
+target_position = Vector2(32, 0)
+
+[node name="RayCast2D2Left" type="RayCast2D" parent="."]
+target_position = Vector2(-31, 0)

@@ -27,7 +27,6 @@ func _physics_process(delta):
 		manny.velocity.y += manny.GRAVITY * delta
 	manny.move_and_slide()
 
-
 func apply_jump_force():
 	manny.velocity.y = manny.JUMP_VELOCITY
 
