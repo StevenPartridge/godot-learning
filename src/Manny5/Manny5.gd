@@ -10,6 +10,7 @@ enum JumpState {
 @onready var anim = $AnimatedSprite2D
 @onready var ray_cast_2d_right = $RayCast2DRight
 @onready var ray_cast_2d_2_left = $RayCast2D2Left
+@onready var pin_joint_2d = $PinJoint2D
 
 @onready var fsm = $FiniteStateMachine
 @onready var state_idle = $FiniteStateMachine/StateIdle
@@ -45,7 +46,13 @@ func _physics_process(delta):
 	handle_input()
 
 func get_collider():
-	return ray_cast_2d_right.get_collider()
+	var right = ray_cast_2d_right.get_collider()
+	var left = ray_cast_2d_2_left.get_collider()
+	if right:
+		return right
+	if left:
+		return left
+	
 
 func get_is_grab_allowed():	
 	var collider = get_collider()
@@ -77,6 +84,9 @@ func handle_input():
 	var is_double_jumping = Input.is_action_just_pressed("Jump") and jump_state == JumpState.JUMP and !is_on_floor()
 	var is_crouching = Input.is_action_pressed("Crouch") and is_on_floor()
 	var is_interacting = Input.is_action_pressed("Interact")
+	
+	if !is_interacting:
+		$PinJoint2D.node_b = $PinJoint2D.node_a
 
 	# print('flip_h: ', anim.flip_h, ', Is_jumping: ', is_jumping, ', jump_state == JumpState.JUMP: ', jump_state == JumpState.JUMP, ', is_on_wall: ', is_on_wall(), ', is_on_floor: ', is_on_floor())
 
@@ -101,6 +111,7 @@ func handle_input():
 		elif is_moving and !is_interacting:
 			fsm.change_state(state_walk)
 		elif is_interacting and get_is_grab_allowed():
+			$PinJoint2D.node_b = get_collider().get_path()
 			fsm.change_state(state_push_pull_idle)
 		else:
 			fsm.change_state(state_idle)

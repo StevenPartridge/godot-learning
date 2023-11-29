@@ -1,4 +1,4 @@
-[gd_scene load_steps=186 format=3 uid="uid://c2ubwtotplyjx"]
+[gd_scene load_steps=185 format=3 uid="uid://c2ubwtotplyjx"]
 
 [ext_resource type="Script" path="res://Manny5/Manny5.gd" id="1_e4to6"]
 [ext_resource type="Texture2D" uid="uid://bel3vbc0dugve" path="res://assets/animations/Manny/Crouch-Idle/Player Crouch-Idle 48x48.png" id="2_v3h44"]
@@ -1195,10 +1195,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qwn2m"]
-size = Vector2(20, 38.5588)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_36qlh"]
-size = Vector2(61, 20)
+size = Vector2(37.3967, 60.2271)
 
 [node name="Manny5" type="CharacterBody2D"]
 script = ExtResource("1_e4to6")
@@ -1207,18 +1204,13 @@ script = ExtResource("1_e4to6")
 texture_filter = 1
 scale = Vector2(2.72, 2.72)
 sprite_frames = SubResource("SpriteFrames_xn0fi")
-animation = &"SwordRun"
+animation = &"InteractionPush"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.205312, 18.4041)
-rotation = -0.0218288
+position = Vector2(0.5, 7.43456)
 scale = Vector2(1.63116, 1.01368)
 shape = SubResource("RectangleShape2D_qwn2m")
-
-[node name="CollisionShape2DInteract" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_36qlh")
 
 [node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("20_c3lht")
@@ -1274,3 +1266,6 @@ target_position = Vector2(32, 0)
 
 [node name="RayCast2D2Left" type="RayCast2D" parent="."]
 target_position = Vector2(-31, 0)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("..")

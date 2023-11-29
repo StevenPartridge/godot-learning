@@ -6,7 +6,4 @@ res://Manny5/MannysWorld5.tscn
 res://Extras/Ball.tscn
 res://Extras/WallSection.tscn
 res://Interactive/MovableBlock/MovableBlock.tscn
-res://Manny5/States/StateWalk.gd
-res://Manny5/States/StatePush.gd
 res://Manny5/States/StatePushPullIdle.gd
-res://Interactive/MovableBlock/MovableBlock.gd

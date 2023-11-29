@@ -23,10 +23,10 @@ func _physics_process(_delta):
 			move_x = manny.SPEED
 			animator.play("InteractionPull")
 		elif manny.get_input_direction() > 0 and !animator.flip_h:
-			move_x = -manny.SPEED
+			move_x = manny.SPEED
 			animator.play("InteractionPush")
 		elif manny.get_input_direction() < 0 and animator.flip_h:
-			move_x = manny.SPEED
+			move_x = -manny.SPEED
 			animator.play("InteractionPush")
 		elif manny.get_input_direction() < 0 and !animator.flip_h:
 			move_x = -manny.SPEED
